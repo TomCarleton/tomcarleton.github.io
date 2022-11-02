@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+
+<html>
+
+    <head>
+        <title>tomcarleton.dev</title>
+
+        <link rel="stylesheet" href="styles/general.css">
+        <link rel="stylesheet" href="styles/main.css">
+
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@100;200;300;400;600;700;900&display=swap" rel="stylesheet">
+
+        <meta charset="UTF-8">
+    </head>
+
+    <body>
+
+        <div class="canvas-container">
+            <canvas id="canv" width="32" height="32"></canvas>
+        </div>
+
+        <div class="navbar">
+            <button class="navbar-item-left" onclick="location.href='index.html'">home</button>
+            <button class="navbar-item" onclick="location.href='about.html'">about</button>
+            <button class="navbar-item-right" onclick="emphasise()">projects</button>
+        </div>
+
+        <header class="main">
+            <div class="h-container">
+                <h1 class="h1-text" id="header-emphasise">projects</h1>
+            </div>
+        </header>
+
+        <div class="main-body">
+            <div class="main-section-container">
+                <div class="main-section">
+                    <h2 class="section-header">tomcarleton.dev</h2>
+
+                    <h4 class="main-date">November 2022</h4>
+
+                    <div class="main-item-container">
+                        <div class="language-container">
+                            <div class="lang-html">HTML</div>
+                            <div class="lang-css">CSS</div>
+                            <div class="lang-js">JavaScript</div>
+                        </div>
+        
+                        <p>Portfolio website built from scratch in HTML and CSS, with some elements of JavaScript.</p>
+
+                        <div class="link-button-container">
+                            <button class="main-button" onclick="location.href='https://tomcarleton.dev'">&#127760; visit website</button>
+                            <button class="main-button" onclick="location.href='https://github.com/TomCarleton/tomcarleton.github.io'">&#128221; view on GitHub</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="main-section-container">
+                <div class="main-section">
+                    <h2 class="section-header">Sudoku Solver</h2>
+    
+                    <h4 class="main-date">October 2022</h4>
+
+                    <div class="main-item-container">
+                        <div class="language-container">
+                            <div class="lang-cs">C#</div>
+                        </div>
+        
+                        <p>A C# application for solving sudoku puzzles using a hybrid bifurcation approach.</p>
+
+                        <div class="link-button-container">
+                            <button class="main-button" onclick="location.href='https://github.com/TomCarleton/Sudoku-Solver'">&#128221; view on GitHub</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="main-section-container">
+                <div class="main-section">
+                    <h2 class="section-header">Wordle Solver</h2>
+    
+                    <h4 class="main-date">September 2022</h4>
+
+                    <div class="main-item-container">
+                        <div class="language-container">
+                            <div class="lang-cs">C#</div>
+                        </div>
+        
+                        <p>A C# application for solving wordle puzzles, adapted from my previous console based python application.</p>
+
+                        <div class="link-button-container">
+                            <button class="main-button" onclick="location.href='https://github.com/TomCarleton/Wordle-Solver'">&#128221; view on GitHub</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="main-section-container">
+                <div class="main-section">
+                    <h2 class="section-header">Wordle Solver (console)</h2>
+    
+                    <h4 class="main-date">August 2022</h4>
+
+                    <div class="main-item-container">
+                        <div class="language-container">
+                            <div class="lang-py">Python</div>
+                        </div>
+        
+                        <p>A python based console application for solving wordle puzzles.</p>
+
+                        <div class="link-button-container">
+                            <button class="main-button" onclick="location.href='https://github.com/TomCarleton/Python-Wordle-Solver'">&#128221; view on GitHub</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <script src="scripts/gradient.js"></script>
+        <script src="scripts/header-emphasis.js"></script>
+    </body>
+
+</html>

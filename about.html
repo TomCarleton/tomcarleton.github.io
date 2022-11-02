@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+
+<html>
+
+    <head>
+        <title>tomcarleton.dev</title>
+
+        <link rel="stylesheet" href="styles/general.css">
+        <link rel="stylesheet" href="styles/main.css">
+
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@100;200;300;400;600;700;900&display=swap" rel="stylesheet">
+
+        <meta charset="UTF-8">
+    </head>
+
+    <body>
+
+        <div class="canvas-container">
+            <canvas id="canv" width="32" height="32"></canvas>
+        </div>
+
+        <div class="navbar">
+            <button class="navbar-item-left" onclick="location.href='index.html'">home</button>
+            <button class="navbar-item" onclick="emphasise()">about</button>
+            <button class="navbar-item-right" onclick="location.href='projects.html'">projects</button>
+        </div>
+
+        <header class="main">
+            <div class="h-container">
+                <h1 class="h1-text" id="header-emphasise">about me</h1>
+            </div>
+        </header>
+
+        <div class="main-body">
+            <div class="main-intro">
+                <div class="profile-photo-container">
+                    <img src="resources/profile-photo.jpg" class="profile-photo">
+                </div>
+                <div class="profile-text-container">
+                    <h2 class="profile-name">Tom Carleton</h2>
+                    <h3 class="profile-title">Mathematics Graduate</h3>
+                </div>
+            </div>
+
+            <div class="main-section-container">
+                <div class="main-section">
+                    <h2 class="section-header">Education</h2>
+    
+                    <div class="main-item-container">
+                        <h3 class="section-subheader">University of Bath
+                            <span class="middle-dot">&#183;</span>
+                            <span class="subheader-unbold">Master's Degree in Mathematics</span>
+                        </h3>
+        
+                        <h4 class="date-subheader">October 2017 - June 2021</h4>
+        
+                        <ul>
+                            <li>Achieved a MMath(Hons) Mathematics degree with a 2:1 classification.</li>
+                            <li>Topics of interest include numerical analysis, scientific computing & programming.</li>
+                            <li>Studies included a variety of programming languages, including MATLAB, Java, C++ & Fortran.</li>
+                            <li>Developed problem solving and analytical skills across a range of Mathematics & Computer Science modules.</li>
+                          </ul>
+                    </div>
+    
+                    <div class="main-item-container">
+                        <h3 class="section-subheader">Queen Elizabeth's Hospital
+                            <span class="middle-dot">&#183;</span>
+                            <span class="subheader-unbold">Secondary School & Sixth Form</span>
+                        </h3>
+        
+                        <h4 class="date-subheader">September 2012 - July 2017</h4>
+        
+                        <ul>
+                            <li>A-levels: IT (A*), Music Technology (A*), Further Maths (A*), Maths (A)</li>
+                            <li>Additional Mathematics FSMQ - A Grade</li>
+                            <li>GCSEs: 9 A*-A Grades</li>
+                          </ul>
+                    </div>
+                </div>
+            </div> 
+
+            <div class="main-section-container">
+                <div class="main-section">
+                    <h2 class="section-header">Responsibilities</h2>
+    
+                    <div class="main-item-container">
+                        <h3 class="section-subheader">University of Bath Dodgeball Club
+                            <span class="middle-dot">&#183;</span>
+                            <span class="subheader-unbold">President</span>
+                        </h3>
+        
+                        <h4 class="date-subheader">October 2020 - June 2021</h4>
+        
+                        <ul>
+                            <li>Developed organisation, communication and time management skills by managing and planning club activities with a team of committee members alongside other university commitments.</li>
+                            <li>Worked on adaptability and personal initiative skills, having to guide the club throughout the pandemic and adapt previous years’ events to conform to strict government guidelines.</li>
+                          </ul>
+                    </div>
+    
+                    <div class="main-item-container">
+                        <h3 class="section-subheader">University of Bath Dodgeball Club
+                            <span class="middle-dot">&#183;</span>
+                            <span class="subheader-unbold">Captain</span>
+                        </h3>
+        
+                        <h4 class="date-subheader">October 2018 - June 2020</h4>
+        
+                        <ul>
+                            <li>Demonstrated team leadership skills by managing a team in high pressure match situations in several leagues and tournaments.</li>
+                            <li>Developed planning skills by organising and running weekly training sessions, both recreationally and competitively focussed.</li>
+                          </ul>
+                    </div>
+                </div>
+            </div> 
+
+            <div class="main-section-container">
+                <div class="main-section">
+                    <h2 class="section-header">Skills & Interests</h2>
+    
+                    <div class="main-item-container">
+                        <h3 class="section-subheader">IT & Programming
+                        </h3>
+        
+                        <ul>
+                            <li>Self taught Python and C# to a reasonable level through creation of  small coding projects completed during my own time, some of which can be viewed on <a href="https://github.com/TomCarleton">GitHub</a>.</li>
+                            <li>Committed to personal learning and development, aspiring to become proficient at a range of programming languages and software packages.</li>
+                            <li>Also self taught graphic design, music & video production across a variety of software packages.</li>
+                            <li>Proficient across the Microsoft Office suite.</li>
+                          </ul>
+                    </div>
+    
+                    <div class="main-item-container">
+                        <h3 class="section-subheader">Music Production
+                        </h3>
+        
+                        <ul>
+                            <li>Composed and produced electronic music since 2012, releasing tracks publicly on a variety of streaming platforms under the alias 'Valcos'.</li>
+                            <li>Amassed over 40 million plays across Spotify, YouTube, etc.  accumulating over 5 thousand followers on various social media platforms.</li>
+                          </ul>
+                    </div>
+
+                    <div class="main-item-container">
+                        <h3 class="section-subheader">Dodgeball
+                        </h3>
+        
+                        <ul>
+                            <li>Selected as part of the Great Britain team for the 2022 World Dodgeball Championships in Canada. Also part of the current Wales international squad.</li>
+                            <li>Qualified level 2 coach, regularly attending recreational and competitive training sessions.</li>
+                          </ul>
+                    </div>
+
+                    <div class="main-item-container">
+                        <h3 class="section-subheader">Additional Skills
+                        </h3>
+        
+                        <ul>
+                            <li>Full UK driver's licence</li>
+                          </ul>
+                    </div>
+                </div>
+            </div> 
+
+            <div class="main-section-container">
+                <div class="main-section">
+                    <h2 class="section-header">Contact</h2>
+    
+                    <div class="main-item-container">
+                        <h3 class="section-subheader">Email: 
+                            <span class="subheader-unbold">tomcarleton99@gmail.com</span>
+                        </h3>
+                    </div>
+                </div>
+            </div> 
+        </div>
+
+        <script src="scripts/gradient.js"></script>
+        <script src="scripts/header-emphasis.js"></script>
+    </body>
+
+</html>
