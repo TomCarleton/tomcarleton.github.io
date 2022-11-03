@@ -13,6 +13,8 @@ body {
 
   a, a:visited{
     color: rgb(35, 170, 130);
+
+    transition: all 0.25s;
   }
 
   a:hover, a:visited:hover{
