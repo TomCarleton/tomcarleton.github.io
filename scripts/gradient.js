@@ -1,3 +1,5 @@
+// Code adapted from https://codepen.io/tmrDevelops/pen/vOPZBv
+
 const c = document.getElementById('canv');
 const $ = c.getContext('2d');
 const startVal = 50 * Math.random();
