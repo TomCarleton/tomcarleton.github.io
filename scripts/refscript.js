@@ -81,6 +81,7 @@ colourSelectors.style.display = "none";
 
 // Set intervals for timer methods
 setInterval(updateMatchCountdown, 10);
+setInterval(updateMatchCountdownSlow, 1000);
 
 // Method to manage display on window resize
 function resizeEvent(){
@@ -208,11 +209,11 @@ function updateMatchCountdown(){
   setMillisecElem.innerHTML = `:${setMilliseconds}`;
 
   // If match not paused and time not zero, reduce timer by 10ms
-  if (matchPaused == false && halfTime > 0){
+  if (matchPaused == false && halfTime > 0 && !document.hidden){
     halfTime--;
   }
 
-  if (setPaused == false && setTime > 0){
+  if (setPaused == false && setTime > 0 && !document.hidden){
     setTime--;
   }
 
@@ -236,6 +237,18 @@ function updateMatchCountdown(){
     setMillisecElem.classList.replace("timer-text-small", "timer-text-small-red");
   }
 
+}
+
+// Method that changes timers every 1000ms when untabbed
+function updateMatchCountdownSlow(){
+ // If match not paused and time not zero, reduce timer by 10ms
+ if (matchPaused == false && halfTime > 0 && document.hidden){
+  halfTime = halfTime >= 100 ? halfTime - 100 : 0;
+}
+
+if (setPaused == false && setTime > 0 && document.hidden){
+  setTime = setTime >= 100 ? setTime - 100 : 0;
+}
 }
 
 // Method to pause and play timers
