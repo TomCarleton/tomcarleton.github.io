@@ -59,12 +59,13 @@ h1{
 .score-edit-button{
   margin: 0 2% 2px;
   width: 46%;
+  height: 30px;
 
   border: solid 1px rgba(255, 255, 255, 0.1);
   background-color: rgba(255, 255, 255, 0.1);
   padding: 0 14px;
   font-family: Arial;
-  font-size: 25px;
+  font-size: 15px;
   color: white;
   border-radius: 3px;
 }
@@ -107,6 +108,7 @@ h1{
   flex-direction: row;
   align-items: center;
   justify-content: center;
+  flex-wrap: wrap;
 }
 
 .button-standard{
@@ -115,9 +117,15 @@ h1{
   background-color: yellow;
   padding: 6px 14px;
   font-family: Kanit, Arial;
-  font-size: 25px;
+  font-size: 15px;
   border-style: none;
   border-radius: 50px;
+}
+
+.button-text{
+  margin-left: 5px;
+  font-size: 12px;
+  line-height: 100%;
 }
 
 .button-orange{

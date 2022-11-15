@@ -1,6 +1,6 @@
 // Define match times (in minutes)
 let startHalfTime = 15; // Half length
-let startSetTime = 8; // Max set length
+let startSetTime = 3; // Max set length
 let minimumSetTime = 1;  // Min set length
 let halftimeBreakTime = 3;  // Halftime break length
 
@@ -161,11 +161,11 @@ function changePauseState(){
   if (setPaused == false){
     matchPaused = true;
     setPaused = true;
-    pauseButton.innerHTML = '&#9654;';
+    pauseButton.innerHTML = '<i class="fa-solid fa-play"></i> <span class="button-text">start</span>';
   } else {
     matchPaused = false;
     setPaused = false;
-    pauseButton.innerHTML = '&#9208;';
+    pauseButton.innerHTML = '<i class="fa-solid fa-pause"></i> <span class="button-text">pause</span>';
   }
 
 }
@@ -174,7 +174,7 @@ function changePauseState(){
 function resetSetTimer(){
 
   // Get button element from html
-  pauseButton.innerHTML = '&#9654;'
+  pauseButton.innerHTML = '<i class="fa-solid fa-play"></i> <span class="button-text">start</span>'
 
   // Format timer colours to default on reset
   matchCountdownElem.classList.replace("timer-text-red", "timer-text");
@@ -225,7 +225,7 @@ function endHalf(){
   endBreakButton.style.display = "block";
 
   // Change button icon to play
-  pauseButton.innerHTML = '&#9654;';
+  pauseButton.innerHTML = '<i class="fa-solid fa-play"></i> <span class="button-text">start</span>';
 
   // Change header text
   headerText.innerHTML = "Half Time";
@@ -300,7 +300,7 @@ function resetAll(){
   halfTime = totalHalfTime;
 
   // Change button icon to play
-  pauseButton.innerHTML = '&#9654;';
+  pauseButton.innerHTML = '<i class="fa-solid fa-play"></i> <span class="button-text">start</span>';
 
   // Reset team scores
   teamOneScore = 0;

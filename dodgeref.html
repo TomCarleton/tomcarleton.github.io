@@ -5,6 +5,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Dodge Referee</title>
+  <script src="https://kit.fontawesome.com/5d1cafa201.js" crossorigin="anonymous"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300&family=Space+Mono&display=swap" rel="stylesheet">
@@ -19,8 +20,8 @@
         <h4 class="team-header">Team One</h4>
         <div id="team-one-score" class="score-number">0</div>
         <div class="button-container">
-          <button onclick="plusScoreOne()" class="score-edit-button">+</button>
-          <button onclick="minusScoreOne()" class="score-edit-button">-</button>
+          <button onclick="plusScoreOne()" class="score-edit-button"><i class="fa-solid fa-plus"></i></button>
+          <button onclick="minusScoreOne()" class="score-edit-button"><i class="fa-solid fa-minus"></i></button>
         </div>
       </div>
   
@@ -28,8 +29,8 @@
         <h4 class="team-header">Team Two</h4>
         <div id="team-two-score" class="score-number">0</div>
         <div class="button-container">
-          <button onclick="plusScoreTwo()" class="score-edit-button">+</button>
-          <button onclick="minusScoreTwo()" class="score-edit-button">-</button>
+          <button onclick="plusScoreTwo()" class="score-edit-button"><i class="fa-solid fa-plus"></i></button>
+          <button onclick="minusScoreTwo()" class="score-edit-button"><i class="fa-solid fa-minus"></i></button>
         </div>
       </div>
     </div>
@@ -61,13 +62,13 @@
     <div class="object-container">
       <h4 class="small-header">Timer Controls</h4>
       <div class="button-container">
-        <button id="play-pause-button" onclick="changePauseState()" class="button-standard">&#9654;</button>
-        <button id="pause-backup-button" onclick="backupPause()" class="button-standard">&#9208;</button>
-        <button id="new-set-button" onclick="resetSetTimer()" class="button-standard">&#8634; set</button>
-        <button id="end-half-button" onclick="endHalf()" class="button-standard button-orange">&#10006; half</button>
-        <button id="end-match-button" onclick="endMatch()" class="button-standard button-orange">&#10006; match</button>
-        <button id="end-break-button" onclick="endBreak()" class="button-standard button-orange">&#10006; break</button>
-        <button id="reset-button" onclick="resetAll()" class="button-standard button-red">&#8634; all</button>
+        <button id="play-pause-button" onclick="changePauseState()" class="button-standard"><i class="fa-solid fa-play"></i> <span class="button-text">start</span></button>
+        <button id="pause-backup-button" onclick="backupPause()" class="button-standard"><i class="fa-solid fa-pause"></i> <span class="button-text">pause</span></button>
+        <button id="new-set-button" onclick="resetSetTimer()" class="button-standard"><i class="fa-solid fa-arrow-rotate-left"></i> <span class="button-text">set</span></button>
+        <button id="end-half-button" onclick="endHalf()" class="button-standard button-orange"><i class="fa-solid fa-forward-step"></i> <span class="button-text">half</span></button>
+        <button id="end-match-button" onclick="endMatch()" class="button-standard button-orange"><i class="fa-solid fa-forward-step"></i> <span class="button-text">match</span></button>
+        <button id="end-break-button" onclick="endBreak()" class="button-standard button-orange"><i class="fa-solid fa-forward-step"></i> <span class="button-text">break</span></button>
+        <button id="reset-button" onclick="resetAll()" class="button-standard button-red"><i class="fa-solid fa-arrow-rotate-left"></i> <span class="button-text">all</span></button>
       </div>
     </div>
   </div>
