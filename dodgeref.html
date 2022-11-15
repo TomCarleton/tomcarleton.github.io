@@ -11,13 +11,13 @@
   <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300&family=Space+Mono&display=swap" rel="stylesheet">
   <link href="styles/refstyle.css" rel="stylesheet">
 </head>
-<body>
+<body onresize="resizeEvent()">
   <div class="app-container">
     <h1 id="header-text">First Half</h1>
 
     <div class="horizontal-container">
-      <div class="object-container team-one">
-        <h4 class="team-header">Team One</h4>
+      <div id="team-one-container" class="object-container team-one">
+        <textarea id="team-one-name" class="team-header" oninput="auto_grow(this)" rows="1"></textarea>
         <div id="team-one-score" class="score-number">0</div>
         <div class="button-container">
           <button onclick="plusScoreOne()" class="score-edit-button"><i class="fa-solid fa-plus"></i></button>
@@ -25,14 +25,49 @@
         </div>
       </div>
   
-      <div class="object-container team-two">
-        <h4 class="team-header">Team Two</h4>
+      <div id="team-two-container" class="object-container team-two">
+        <textarea id="team-two-name" class="team-header" oninput="auto_grow(this)" rows="1"></textarea>
         <div id="team-two-score" class="score-number">0</div>
         <div class="button-container">
           <button onclick="plusScoreTwo()" class="score-edit-button"><i class="fa-solid fa-plus"></i></button>
           <button onclick="minusScoreTwo()" class="score-edit-button"><i class="fa-solid fa-minus"></i></button>
         </div>
       </div>
+    </div>
+
+    <div class="horizontal-container container-relative">
+      <div class="button-container-settings">
+        <button onclick="editNameOne()" class="grey-button"><i class="fa-solid fa-pen-to-square"></i></button>
+        <button onclick="toggleColours()" id="grey-colour-button-one" class="grey-button"><i class="fa-solid fa-palette"></i></button>
+        <button onclick="resetTeamOne()" class="grey-button"><i class="fa-solid fa-trash-can"></i></button>
+      </div>
+
+      <div class="button-container-settings">
+        <button onclick="editNameTwo()" class="grey-button"><i class="fa-solid fa-pen-to-square"></i></button>
+        <button onclick="toggleColours()" id="grey-colour-button-two" class="grey-button"><i class="fa-solid fa-palette"></i></button>
+        <button onclick="resetTeamTwo()" class="grey-button"><i class="fa-solid fa-trash-can"></i></button>
+      </div>
+
+      <div id="colour-selector" class="horizontal-container">
+        <div class="button-container-settings button-container-colour-one">
+          <button onclick="editColourOneTop()" class="grey-colour-button">Top
+            <input oninput="colourUpdate()" id="colour-one-top" class="colour-button" type="color">
+          </button>
+          <button onclick="editColourOneBottom()" class="grey-colour-button">Bottom
+            <input oninput="colourUpdate()" id="colour-one-bottom" class="colour-button" type="color">
+          </button>
+        </div>
+  
+        <div class="button-container-settings button-container-colour-two">
+          <button onclick="editColourTwoTop()" class="grey-colour-button">Top
+            <input oninput="colourUpdate()" id="colour-two-top" class="colour-button" type="color">
+          </button>
+          <button onclick="editColourTwoBottom()" class="grey-colour-button">Bottom
+            <input oninput="colourUpdate()" id="colour-two-bottom" class="colour-button" type="color">
+          </button>
+        </div>
+      </div>
+
     </div>
 
     <div id="half-timer-container" class="object-container">

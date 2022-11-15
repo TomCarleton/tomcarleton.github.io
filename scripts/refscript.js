@@ -22,8 +22,20 @@ let setPaused = true;
 let halfBreak = false;
 
 // Get elements from html
+const teamOneName = document.getElementById('team-one-name');
+const teamTwoName = document.getElementById('team-two-name');
 const teamOneScoreText = document.getElementById('team-one-score');
 const teamTwoScoreText = document.getElementById('team-two-score');
+const teamOneBox = document.getElementById('team-one-container');
+const teamTwoBox = document.getElementById('team-two-container');
+
+const colourButtonOne = document.getElementById('grey-colour-button-one');
+const colourButtonTwo = document.getElementById('grey-colour-button-two');
+const colourSelectors = document.getElementById('colour-selector');
+const colourOneTop = document.getElementById('colour-one-top');
+const colourOneBottom = document.getElementById('colour-one-bottom');
+const colourTwoTop = document.getElementById('colour-two-top');
+const colourTwoBottom = document.getElementById('colour-two-bottom');
 
 const matchCountdownElem = document.getElementById('match-countdown');
 const matchMillisecElem = document.getElementById('match-millisecond-countdown');
@@ -45,16 +57,103 @@ const halftimeBreakTimerContainer = document.getElementById('halftime-break-time
 
 const headerText = document.getElementById('header-text');
 
+// Set default team names
+teamOneName.value = "Team Blue";
+teamTwoName.value = "Team Red";
+
+// Set default grey button colours
+colourButtonOne.style.backgroundColor = "rgb(55, 55, 55)";
+colourButtonTwo.style.backgroundColor = "rgb(55, 55, 55)";
+
+// Set default colour button colours
+colourOneTop.value = "#3161ff";
+colourOneBottom.value = "#4040f8";
+colourTwoTop.value = "#dd2222";
+colourTwoBottom.value = "#c53f3f";
+
 // Hide unneeded by default
 pauseBackupButton.style.display = "none";
 endBreakButton.style.display = "none";
 halftimeBreakTimerContainer.style.display = "none";
 endMatchButton.style.display = "none";
+colourSelectors.style.display = "none";
 
 
 // Set intervals for timer methods
 setInterval(updateMatchCountdown, 10);
-setInterval(updateSetCountdown, 10);
+
+// Method to manage display on window resize
+function resizeEvent(){
+  teamOneName.style.height = "0";
+  teamOneName.style.height = (teamOneName.scrollHeight) + "px";
+  teamTwoName.style.height = "0";
+  teamTwoName.style.height = (teamTwoName.scrollHeight) + "px";
+}
+
+// Methods to edit team score displays
+function editNameOne(){
+  teamOneName.select();
+}
+
+function editNameTwo(){
+  teamTwoName.select();
+}
+
+// Method to show/hide colour selectors
+function toggleColours(){
+  if (colourButtonOne.style.backgroundColor === "rgb(55, 55, 55)"){
+    colourButtonOne.style.backgroundColor = "rgb(90, 90, 90)"
+    colourButtonTwo.style.backgroundColor = "rgb(90, 90, 90)"
+    colourSelectors.style.display = "flex";
+  } else {
+    colourButtonOne.style.backgroundColor = "rgb(55, 55, 55)"
+    colourButtonTwo.style.backgroundColor = "rgb(55, 55, 55)"
+    colourSelectors.style.display = "none";
+  }
+}
+
+// Methods to select colour picker on button click
+function editColourOneTop(){
+  colourOneTop.click();
+}
+
+function editColourOneBottom(){
+  colourOneBottom.click();
+}
+
+function editColourTwoTop(){
+  colourTwoTop.click();
+}
+
+function editColourTwoBottom(){
+  colourTwoBottom.click();
+}
+
+// Method to update team colours
+function colourUpdate(){
+  teamOneBox.style.backgroundImage = `linear-gradient(${colourOneTop.value}, ${colourOneBottom.value})`;
+  teamTwoBox.style.backgroundImage = `linear-gradient(${colourTwoTop.value}, ${colourTwoBottom.value})`;
+}
+
+function resetTeamOne(){
+  teamOneName.value = "Team Blue";
+  teamOneBox.style.backgroundImage = "linear-gradient(rgb(49, 97, 255), rgb(64, 64, 248))";
+  colourOneTop.value = "#3161ff";
+  colourOneBottom.value = "#4040f8";
+}
+
+function resetTeamTwo(){
+  teamTwoName.value = "Team Red";
+  teamTwoBox.style.backgroundImage = "linear-gradient(rgb(221, 34, 34), rgb(197, 63, 63))";
+  colourTwoTop.value = "#dd2222";
+  colourTwoBottom.value = "#c53f3f";
+}
+
+// Method to auto increase height of team name box
+function auto_grow(element) {
+  element.style.height = "0";
+  element.style.height = (element.scrollHeight) + "px";
+}
 
 // Methods to increase team scores
 function plusScoreOne(){
@@ -77,29 +176,49 @@ function minusScoreTwo(){
   teamTwoScoreText.innerHTML = teamTwoScore;
 }
 
-// Method that changes match timer every 10ms
+// Method that changes timers every 10ms
 function updateMatchCountdown(){
 
   // Calculate mins & secs from milliseconds
-  const minutes = Math.floor(halfTime/6000);
-  let seconds = Math.floor(halfTime % 6000 / 100);
-  let milliseconds = halfTime % 100;
+  const halfMinutes = Math.floor(halfTime / 6000);
+  let halfSeconds = Math.floor(halfTime % 6000 / 100);
+  let halfMilliseconds = halfTime % 100;
+
+  const setMinutes = Math.floor(setTime / 6000);
+  let setSeconds = Math.floor(setTime % 6000 / 100);
+  let setMilliseconds = setTime % 100;
 
   // Keep zeros in seconds and milliseconds tickers
-  seconds = seconds < 10 ? '0' + seconds : seconds;
-  milliseconds = milliseconds < 10 ? '0' + milliseconds : milliseconds;
+  halfSeconds = halfSeconds < 10 ? '0' + halfSeconds : halfSeconds;
+  halfMilliseconds = halfMilliseconds < 10 ? '0' + halfMilliseconds : halfMilliseconds;
 
-  // Format and update timer display
-  matchCountdownElem.innerHTML = `${minutes}:${seconds}`;
-  matchMillisecElem.innerHTML = `:${milliseconds}`;
+  setSeconds = setSeconds < 10 ? '0' + setSeconds : setSeconds;
+  setMilliseconds = setMilliseconds < 10 ? '0' + setMilliseconds : setMilliseconds;
+
+  // Format and update half timer display
+  matchCountdownElem.innerHTML = `${halfMinutes}:${halfSeconds}`;
+  matchMillisecElem.innerHTML = `:${halfMilliseconds}`;
 
   // Repeat for break timer (as it is reused)
-  breakCountdownElem.innerHTML = `${minutes}:${seconds}`;
-  breakMillisecElem.innerHTML = `:${milliseconds}`;
+  breakCountdownElem.innerHTML = `${halfMinutes}:${halfSeconds}`;
+  breakMillisecElem.innerHTML = `:${halfMilliseconds}`;
+
+  // Format and update set timer display
+  setCountdownElem.innerHTML = `${setMinutes}:${setSeconds}`;
+  setMillisecElem.innerHTML = `:${setMilliseconds}`;
 
   // If match not paused and time not zero, reduce timer by 10ms
   if (matchPaused == false && halfTime > 0){
     halfTime--;
+  }
+
+  if (setPaused == false && setTime > 0){
+    setTime--;
+  }
+
+  // If half timer is less than 1 set length and paused, set equal to match time
+  if (setPaused == true && halfTime < totalSetTime && halfTime == setTime - 1){
+    setTime = halfTime;
   }
 
   // If time zero, change display of timer to red
@@ -112,35 +231,6 @@ function updateMatchCountdown(){
     breakMillisecElem.classList.replace("timer-text-small", "timer-text-small-red");
   }
 
-}
-
-// Method that changes set timer every 10ms
-function updateSetCountdown(){
-
-  // Calculate mins & secs from milliseconds
-  const minutes = Math.floor(setTime/6000);
-  let seconds = Math.floor(setTime % 6000 / 100);
-  let milliseconds = setTime % 100;
-
-  // Keep zeros in seconds and milliseconds tickers
-  seconds = seconds < 10 ? '0' + seconds : seconds;
-  milliseconds = milliseconds < 10 ? '0' + milliseconds : milliseconds;
-
-  // Format and update timer display
-  setCountdownElem.innerHTML = `${minutes}:${seconds}`;
-  setMillisecElem.innerHTML = `:${milliseconds}`;
-
-  // If set not paused and time not zero, reduce timer by 10ms
-  if (setPaused == false && setTime > 0){
-    setTime--;
-  }
-
-  // If half timer is less than 1 set length and paused, set equal to match time
-  if (setPaused == true && halfTime < totalSetTime && halfTime == setTime - 1){
-    setTime = halfTime;
-  }
-
-  // If time zero, change display of timer to red
   if (setTime == 0){
     setCountdownElem.classList.replace("timer-text", "timer-text-red");
     setMillisecElem.classList.replace("timer-text-small", "timer-text-small-red");
@@ -254,6 +344,9 @@ function endBreak(){
   halfTimerContainer.style.display = "flex";
   setTimerContainer.style.display = "flex";
 
+  // Change button icon to play
+  pauseButton.innerHTML = '<i class="fa-solid fa-play"></i> <span class="button-text">start</span>';
+
   // Change header text
   headerText.innerHTML = "Second Half";
 
@@ -277,8 +370,10 @@ function endMatch(){
   newSetButton.style.display = "none";
   endMatchButton.style.display = "none";
   pauseButton.style.display = "none";
+  pauseBackupButton.style.display = "none";
   halfTimerContainer.style.display = "none";
   setTimerContainer.style.display = "none";
+
 
   // Change header text
   headerText.innerHTML = "Full Time";
