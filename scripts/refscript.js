@@ -1,8 +1,8 @@
 // Define match times (in minutes)
-let startHalfTime = 0.25; // Half length
-let startSetTime = 0.2; // Max set length
-let minimumSetTime = 0.1;  // Min set length
-let halftimeBreakTime = 1;  // Halftime break length
+let startHalfTime = 15; // Half length
+let startSetTime = 8; // Max set length
+let minimumSetTime = 1;  // Min set length
+let halftimeBreakTime = 3;  // Halftime break length
 
 // Initialize team scores
 let teamOneScore = 0;
