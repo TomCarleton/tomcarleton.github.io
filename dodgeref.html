@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dodge Referee</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300&family=Space+Mono&display=swap" rel="stylesheet">
+  <link href="styles/refstyle.css" rel="stylesheet">
+</head>
+<body>
+  <div class="app-container">
+    <h1 id="header-text">First Half</h1>
+
+    <div class="horizontal-container">
+      <div class="object-container team-one">
+        <h4 class="team-header">Team One</h4>
+        <div id="team-one-score" class="score-number">0</div>
+        <div class="button-container">
+          <button onclick="plusScoreOne()" class="score-edit-button">+</button>
+          <button onclick="minusScoreOne()" class="score-edit-button">-</button>
+        </div>
+      </div>
+  
+      <div class="object-container team-two">
+        <h4 class="team-header">Team Two</h4>
+        <div id="team-two-score" class="score-number">0</div>
+        <div class="button-container">
+          <button onclick="plusScoreTwo()" class="score-edit-button">+</button>
+          <button onclick="minusScoreTwo()" class="score-edit-button">-</button>
+        </div>
+      </div>
+    </div>
+
+    <div id="half-timer-container" class="object-container">
+      <h4 class="small-header">Half Timer</h4>
+      <div class="timer-container">
+        <div id="match-countdown" class="timer-text">15:00</div>
+        <div id="match-millisecond-countdown" class="timer-text-small"></div>
+      </div>
+    </div>
+
+    <div id="set-timer-container" class="object-container">
+      <h4 class="small-header">Set Timer</h4>
+      <div class="timer-container">
+        <div id="set-countdown" class="timer-text">3:00</div>
+        <div id="set-millisecond-countdown" class="timer-text-small"></div>
+      </div>
+    </div>
+
+    <div id="halftime-break-timer-container" class="object-container">
+      <h4 class="small-header">Half Time Break</h4>
+      <div class="timer-container">
+        <div id="break-countdown" class="timer-text">3:00</div>
+        <div id="break-millisecond-countdown" class="timer-text-small"></div>
+      </div>
+    </div>
+
+    <div class="object-container">
+      <h4 class="small-header">Timer Controls</h4>
+      <div class="button-container">
+        <button id="play-pause-button" onclick="changePauseState()" class="button-standard">&#9654;</button>
+        <button id="pause-backup-button" onclick="backupPause()" class="button-standard">&#9208;</button>
+        <button id="new-set-button" onclick="resetSetTimer()" class="button-standard">&#8634; set</button>
+        <button id="end-half-button" onclick="endHalf()" class="button-standard button-orange">&#10006; half</button>
+        <button id="end-match-button" onclick="endMatch()" class="button-standard button-orange">&#10006; match</button>
+        <button id="end-break-button" onclick="endBreak()" class="button-standard button-orange">&#10006; break</button>
+        <button id="reset-button" onclick="resetAll()" class="button-standard button-red">&#8634; all</button>
+      </div>
+    </div>
+  </div>
+  <script src="scripts/refscript.js"></script>
+</body>
+</html>

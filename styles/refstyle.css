@@ -1,0 +1,130 @@
+body{
+  margin: 0 0 0 0;
+  background-color: rgb(31, 31, 31);
+}
+
+h1{
+  margin: 0;
+}
+
+.app-container{
+  background-color: rgb(48, 48, 48);
+  width: auto;
+  height: auto;
+  font-family: Kanit, Arial;
+  color: white;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.horizontal-container{
+  display: flex;
+  flex-direction: row;
+}
+
+.object-container{
+  display: flex;
+  flex-direction: column;
+
+  border: solid 1px gray;
+  border-radius: 5px;
+  margin: 10px;
+}
+
+.team-one{
+  background-image: linear-gradient(rgb(49, 97, 255), rgb(64, 64, 248))
+}
+
+.team-two{
+  background-image: linear-gradient(rgb(221, 34, 34), rgb(197, 63, 63));
+}
+
+.team-header{
+  text-align: center;
+  margin: 2px 25px 0;
+  font-size: 18px;
+  color: white;
+}
+
+.score-number{
+  margin: auto 0 10px;
+
+  font-family: Space Mono, Arial;
+  font-size: 50px;
+  font-weight: 600;
+  text-align: center;
+}
+
+.score-edit-button{
+  margin: 0 2% 2px;
+  width: 46%;
+
+  border: solid 1px rgba(255, 255, 255, 0.1);
+  background-color: rgba(255, 255, 255, 0.1);
+  padding: 0 14px;
+  font-family: Arial;
+  font-size: 25px;
+  color: white;
+  border-radius: 3px;
+}
+
+.timer-container{
+  display: flex;
+  align-items: baseline;
+  font-family: Space Mono, Arial;
+  margin: auto 10px;
+}
+
+.timer-text{
+  font-size: 36px;
+}
+
+.timer-text-red{
+  font-size: 36px;
+  color: rgb(207, 64, 64);
+}
+
+.timer-text-small{
+  font-size: 20px;
+  color: rgb(196, 196, 196);
+}
+
+.timer-text-small-red{
+  font-size: 20px;
+  color: rgb(165, 52, 52);
+}
+
+.small-header{
+  text-align: center;
+  margin: 0 10px;
+  font-size: 15px;
+  color: rgb(158, 158, 158);
+}
+
+.button-container{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+.button-standard{
+  margin: 5px;
+
+  background-color: yellow;
+  padding: 6px 14px;
+  font-family: Kanit, Arial;
+  font-size: 25px;
+  border-style: none;
+  border-radius: 50px;
+}
+
+.button-orange{
+  background-color: rgb(252, 139, 33);
+}
+
+.button-red{
+  background-color: rgb(199, 36, 36);
+  color: white;
+}
