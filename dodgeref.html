@@ -14,6 +14,27 @@
 <body onresize="resizeEvent()">
   <div class="app-container">
     <h1 id="header-text">First Half</h1>
+    <i onclick="toggleSidebar(this)" class="fa-solid fa-gear settings-icon"></i>
+
+    <div id="left-sidebar" class="left-sidebar">
+      <h1 class="settings-header">Settings</h1>
+      <h3>Half Length (minutes)</h3>
+      <input id="start-half-time" type="number" min="0" class="settings-input">
+      <h3>Set Length (minutes)</h3>
+      <input id="start-set-time" type="number" min="0" class="settings-input">
+      <h3>Min Set Length (minutes)</h3>
+      <input id="minimum-set-time" type="number" min="0" class="settings-input">
+      <h3>Half-Time Break (minutes)</h3>
+      <input id="halftime-break-time" type="number" min="0" class="settings-input">
+      <h3>Timeout Length (minutes)</h3>
+      <input id="max-timeout-time" type="number" min="0" class="settings-input">
+      <h3 class="extra-header-space">Presets</h3>
+      <div class="button-container-settings sidebar-container">
+        <button onclick="clothLeagueSettings()" class="grey-button">Cloth League</button>
+        <button onclick="clothOpenSettings()" class="grey-button">Cloth Open</button>
+      </div>
+      <button id="reset-button" onclick="resetAll()" class="button-standard button-red"><i class="fa-solid fa-arrow-rotate-left"></i> <span class="button-text">all</span></button>
+    </div>
 
     <div class="horizontal-container">
       <div id="team-one-container" class="object-container team-one">

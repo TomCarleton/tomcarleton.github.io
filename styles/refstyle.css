@@ -7,6 +7,13 @@ h1{
   margin: 0;
 }
 
+h3{
+  margin: 0;
+  font-size: 14px;
+  font-weight: 100;
+  color: rgb(230, 230, 230);
+}
+
 .app-container{
   background-color: rgb(48, 48, 48);
   width: auto;
@@ -16,6 +23,7 @@ h1{
   display: flex;
   align-items: center;
   flex-direction: column;
+  position: relative;
 }
 
 .horizontal-container{
@@ -32,6 +40,61 @@ h1{
   border: solid 1px gray;
   border-radius: 5px;
   margin: 10px;
+}
+
+.settings-icon{
+  position: absolute;
+  font-size: 18px;
+  top: 9px;
+  left: 7px;
+  z-index: 101;
+
+  background-color:rgb(40, 40, 40);
+  border-radius: 50px;
+  padding: 8px;
+}
+
+.left-sidebar{
+  position: absolute;
+  left: 0;
+  height: 100%;
+  width: min(250px, 80vw);
+  z-index: 100;
+
+  display: none;
+  flex-direction: column;
+  align-items: center;
+
+  background-color: rgb(40, 40, 40);
+  border-right: solid 1px rgba(255, 255, 255, 0.25);
+}
+
+.settings-header{
+  margin-bottom: 10px;
+}
+
+.extra-header-space{
+  margin-top: 10px;
+}
+
+.settings-input{
+  margin: 2px 5px 6px;
+  width: min(40vw, 200px);
+  height: 28px;
+
+  resize: none;
+  overflow: hidden;
+
+  text-align: center;
+  font-size: 16px;
+  font-weight: 400;
+  font-family: Kanit, Arial;
+  color: white;
+
+  background-color: rgb(55, 55, 55);
+  border-style: solid;
+  border-width: 1px;
+  border-radius: 3px;
 }
 
 .team-one{
@@ -96,6 +159,11 @@ h1{
 
   background-color: rgb(40, 40, 40);
   border-radius: 5px;
+}
+
+.sidebar-container{
+  margin: 2px auto 10px;
+  background-color: rgb(35, 35, 35);
 }
 
 .no-background-container{

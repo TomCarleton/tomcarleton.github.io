@@ -5,6 +5,13 @@ let minimumSetTime = 1;  // Min set length
 let halftimeBreakTime = 3;  // Halftime break length
 let maxTimeoutTime = 1; // Timeout length
 
+// Calculate timing constants based off above variables
+let totalHalfTime = startHalfTime * 60 * 100;
+let totalSetTime = startSetTime * 60 * 100;
+let minSetTime = minimumSetTime * 60 * 100;
+let halfBreakTime = halftimeBreakTime * 60 * 100;
+let totalTimeoutTime = maxTimeoutTime * 60 * 100;
+
 // Initialize team scores
 let teamOneScore = 0;
 let teamTwoScore = 0;
@@ -17,13 +24,6 @@ let blueCardCount = 0;
 let yellowCardCount = 0;
 let redCardCount = 0;
 
-// Calculate timing constants based off above variables
-const totalHalfTime = startHalfTime * 60 * 100;
-const totalSetTime = startSetTime * 60 * 100;
-const minSetTime = minimumSetTime * 60 * 100;
-const halfBreakTime = halftimeBreakTime * 60 * 100;
-const totalTimeoutTime = maxTimeoutTime * 60 * 100;
-
 // Calculate timings based off above variables
 let halfTime = totalHalfTime;
 let setTime = totalSetTime;
@@ -34,6 +34,13 @@ let timeoutPaused = true;
 let halfBreak = false;
 
 // Get elements from html
+const sideBar = document.getElementById('left-sidebar');
+const startHalfTimeInput = document.getElementById('start-half-time');
+const startSetTimeInput = document.getElementById('start-set-time');
+const minimumSetTimeInput = document.getElementById('minimum-set-time');
+const halftimeBreakTimeInput = document.getElementById('halftime-break-time');
+const maxTimeoutTimeInput = document.getElementById('max-timeout-time');
+
 const teamOneName = document.getElementById('team-one-name');
 const teamTwoName = document.getElementById('team-two-name');
 const teamOneScoreText = document.getElementById('team-one-score');
@@ -88,6 +95,13 @@ const headerText = document.getElementById('header-text');
 teamOneName.value = "Team Blue";
 teamTwoName.value = "Team Red";
 
+// Set default time settings values
+startHalfTimeInput.value = startHalfTime;
+startSetTimeInput.value = startSetTime;
+minimumSetTimeInput.value = minimumSetTime;
+halftimeBreakTimeInput.value = halftimeBreakTime;
+maxTimeoutTimeInput.value = maxTimeoutTime;
+
 // Set default grey button colours
 colourButtonOne.style.backgroundColor = "rgb(55, 55, 55)";
 colourButtonTwo.style.backgroundColor = "rgb(55, 55, 55)";
@@ -118,6 +132,45 @@ cardSelectors.style.display = "none";
 // Set intervals for timer methods
 setInterval(updateMatchCountdown, 10);
 setInterval(updateMatchCountdownSlow, 1000);
+
+// Method to calculate match timings
+function calculateTimings(){
+  // Calculate timing constants based off above variables
+  totalHalfTime = startHalfTimeInput.value * 60 * 100;
+  totalSetTime = startSetTimeInput.value * 60 * 100;
+  minSetTime = minimumSetTimeInput.value * 60 * 100;
+  halfBreakTime = halftimeBreakTimeInput.value * 60 * 100;
+  totalTimeoutTime = maxTimeoutTimeInput.value * 60 * 100;
+}
+
+// Method to show/hide sidebar
+function toggleSidebar(element){
+  if (element.style.backgroundColor == "rgb(40, 40, 40)" || element.style.backgroundColor == ""){
+    // Open timer settings
+    sideBar.style.display = "flex";
+    element.style.backgroundColor = "rgb(75, 75, 75)";
+  } else {
+    // Close timer settings
+    sideBar.style.display = "none";
+    element.style.backgroundColor = "rgb(40, 40, 40)";
+  }
+}
+
+function clothLeagueSettings(){
+  startHalfTimeInput.value = 15;
+  startSetTimeInput.value = 3;
+  minimumSetTimeInput.value = 1;
+  halftimeBreakTimeInput.value = 3;
+  maxTimeoutTimeInput.value = 1;
+}
+
+function clothOpenSettings(){
+  startHalfTimeInput.value = 8;
+  startSetTimeInput.value = 3;
+  minimumSetTimeInput.value = 0.5;
+  halftimeBreakTimeInput.value = 2;
+  maxTimeoutTimeInput.value = 1;
+}
 
 // Method to manage display on window resize
 function resizeEvent(){
@@ -810,6 +863,7 @@ function resetAll(){
   matchPhase = "first-half";
 
   // Reset and pause timers
+  calculateTimings();
   setPaused = true;
   matchPaused = true;
   timeoutPaused = true;
