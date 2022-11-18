@@ -846,8 +846,10 @@ function resetAll(){
 
   // Show and hide relevant buttons
   pauseBackupButton.style.display = "none";
+  timeoutPauseButton.style.display = "none";
   endBreakButton.style.display = "none";
   endMatchButton.style.display = "none";
+  endTimeoutButton.style.display = "none";
   newSetButton.style.display = "block";
   endHalfButton.style.display = "block";
   pauseButton.style.display = "block";
