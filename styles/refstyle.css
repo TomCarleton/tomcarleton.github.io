@@ -21,11 +21,13 @@ h1{
 .horizontal-container{
   display: flex;
   flex-direction: row;
+  align-items: center;
 }
 
 .object-container{
   display: flex;
   flex-direction: column;
+  position: relative;
 
   border: solid 1px gray;
   border-radius: 5px;
@@ -96,6 +98,11 @@ h1{
   border-radius: 5px;
 }
 
+.no-background-container{
+  background-color: transparent;
+  margin-top: -6px;
+}
+
 .container-relative{
   position: relative;
 }
@@ -114,7 +121,6 @@ h1{
   left: calc(min(43vw, 215px) + 20px);
 }
 
-
 .grey-button{
   margin: 5px 4px 5px 4px;
 
@@ -125,6 +131,55 @@ h1{
   font-size: 12px;
   border-style: none;
   border-radius: 50px;
+}
+
+.blue-card{
+color: rgb(97, 105, 206);
+}
+
+.yellow-card{
+color: rgb(255, 255, 77);
+}
+
+.red-card{
+color: rgb(255, 78, 78);
+}
+
+.card-container{
+display: none;
+flex-direction: row;
+align-items: center;
+}
+
+.blue-container{
+  background-color: rgba(97, 104, 206, 0.25);
+  margin: 2px 4px;
+}
+
+.yellow-container{
+  background-color: rgba(255, 255, 77, 0.1);
+  margin: 2px 4px;
+}
+
+.red-container{
+  background-color: rgba(255, 78, 78, 0.2);
+  margin: 2px 4px;
+}
+
+.card-details{
+  font-size: 10px;
+  margin-left: 5px;
+  color: rgb(211, 211, 211);
+}
+
+.card-details-hidden{
+  display: none;
+}
+
+.close-card{
+  display: none;
+  margin-left: 5px;
+  color: rgba(255, 255, 255, 0.75);
 }
 
 .grey-colour-button{
@@ -161,6 +216,17 @@ h1{
   margin: auto 10px;
 }
 
+.timer-settings{
+  position: absolute;
+  top: 3px;
+  right: 3px;
+
+  font-size: 12px;
+  background-color: rgb(40, 40, 40);
+  padding: 4px 3px;
+  border-radius: 10px;
+}
+
 .timer-text{
   font-size: 36px;
 }
@@ -185,6 +251,41 @@ h1{
   margin: 0 10px;
   font-size: 15px;
   color: rgb(158, 158, 158);
+}
+
+.header-shift{
+  margin-right: 25px;
+}
+
+.timer-settings-container{
+  width: fit-content;
+  height: fit-content;
+  margin-left: -5px;
+  display: none;
+}
+
+.vertical-buttons{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+
+  margin: 0;
+  padding: 0;
+}
+
+.small-grey{
+  font-size: 7px;
+  padding: 4px 6px;
+  margin: 4px 3px;
+}
+
+.time-settings-text{
+  font-size: 10px;
+  color: rgb(211, 211, 211);
+  width: fit-content;
+  text-align: center;
 }
 
 .button-container{

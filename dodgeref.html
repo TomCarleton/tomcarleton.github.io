@@ -35,17 +35,63 @@
       </div>
     </div>
 
+    <div id="card-display" class="horizontal-container">
+      <div class="button-container-settings no-background-container">
+        <button id="blue-card-container-one" onclick="toggleCloseButton(this)" class="grey-button card-container blue-container">
+          <i style="color:rgb(97, 105, 206);" class="fa-solid fa-mobile"></i>
+          <div id="blue-card-count-display" class="card-details">2 sets</div>
+          <div id="blue-card-count" class="card-details-hidden">2</div>
+          <i onclick="deleteCard(this)" id="close-card" class="fa-solid fa-circle-xmark close-card"></i>
+        </button>
+        <button id="yellow-card-container-one" onclick="toggleCloseButton(this)" class="grey-button card-container yellow-container">
+          <i style="color:rgb(255, 255, 77);" class="fa-solid fa-mobile"></i>
+          <div id="yellow-card-time-display" class="card-details">5:00</div>
+          <div id="yellow-card-time" class="card-details-hidden">30000</div>
+          <i onclick="deleteCard(this)" id="close-card" class="fa-solid fa-circle-xmark close-card"></i>
+        </button>
+        <button id="red-card-container-one" onclick="toggleCloseButton(this)" class="grey-button card-container red-container">
+          <i style="color:rgb(255, 78, 78);" class="fa-solid fa-mobile"></i>
+          <div class="card-details">Match</div>
+          <i onclick="deleteCard(this)" id="close-card" class="fa-solid fa-circle-xmark close-card"></i>
+        </button>
+      </div>
+
+      <div class="button-container-settings no-background-container">
+        <button id="blue-card-container-two" onclick="toggleCloseButton(this)" class="grey-button card-container blue-container">
+          <i style="color:rgb(97, 105, 206);" class="fa-solid fa-mobile"></i>
+          <div id="blue-card-count-display" class="card-details">2 sets</div>
+          <div id="blue-card-count" class="card-details-hidden">2</div>
+          <i onclick="deleteCard(this)" id="close-card" class="fa-solid fa-circle-xmark close-card"></i>
+        </button>
+        <button id="yellow-card-container-two" onclick="toggleCloseButton(this)" class="grey-button card-container yellow-container">
+          <i style="color:rgb(255, 255, 77);" class="fa-solid fa-mobile"></i>
+          <div id="yellow-card-time-display" class="card-details">5:00</div>
+          <div id="yellow-card-time" class="card-details-hidden">30000</div>
+          <i onclick="deleteCard(this)" id="close-card" class="fa-solid fa-circle-xmark close-card"></i>
+        </button>
+        <button id="red-card-container-two" onclick="toggleCloseButton(this)" class="grey-button card-container red-container">
+          <i style="color:rgb(255, 78, 78);" class="fa-solid fa-mobile"></i>
+          <div class="card-details">Match</div>
+          <i onclick="deleteCard(this)" id="close-card" class="fa-solid fa-circle-xmark close-card"></i>
+        </button>
+      </div>
+    </div>
+
     <div class="horizontal-container container-relative">
       <div class="button-container-settings">
         <button onclick="editNameOne()" class="grey-button"><i class="fa-solid fa-pen-to-square"></i></button>
         <button onclick="toggleColours()" id="grey-colour-button-one" class="grey-button"><i class="fa-solid fa-palette"></i></button>
         <button onclick="resetTeamOne()" class="grey-button"><i class="fa-solid fa-trash-can"></i></button>
+        <button onclick="toggleCards()" id="grey-card-button-one" class="grey-button"><i class="fa-solid fa-clone"></i></button>
+        <button onclick="timeoutStart(this)" id="grey-timeout-button-one" class="grey-button"><i class="fa-solid fa-stopwatch"></i> 1</button>
       </div>
 
       <div class="button-container-settings">
         <button onclick="editNameTwo()" class="grey-button"><i class="fa-solid fa-pen-to-square"></i></button>
         <button onclick="toggleColours()" id="grey-colour-button-two" class="grey-button"><i class="fa-solid fa-palette"></i></button>
         <button onclick="resetTeamTwo()" class="grey-button"><i class="fa-solid fa-trash-can"></i></button>
+        <button onclick="toggleCards()" id="grey-card-button-two" class="grey-button"><i class="fa-solid fa-clone"></i></button>
+        <button onclick="timeoutStart(this)" id="grey-timeout-button-two" class="grey-button"><i class="fa-solid fa-stopwatch"></i> 1</button>
       </div>
 
       <div id="colour-selector" class="horizontal-container">
@@ -68,41 +114,150 @@
         </div>
       </div>
 
+      <div id="card-selector" class="horizontal-container">
+        <div class="button-container-settings button-container-colour-one">
+          <button onclick="teamOneBlueCard()" class="grey-button blue-card"><i class="fa-solid fa-mobile"></i> +</button>
+          <button onclick="teamOneYellowCard()" class="grey-button yellow-card"><i class="fa-solid fa-mobile"></i> +</button>
+          <button onclick="teamOneRedCard()" class="grey-button red-card"><i class="fa-solid fa-mobile"></i> +</button>
+        </div>
+  
+        <div class="button-container-settings button-container-colour-two">
+          <button onclick="teamTwoBlueCard()" class="grey-button blue-card"><i class="fa-solid fa-mobile"></i> +</button>
+          <button onclick="teamTwoYellowCard()" class="grey-button yellow-card"><i class="fa-solid fa-mobile"></i> +</button>
+          <button onclick="teamTwoRedCard()" class="grey-button red-card"><i class="fa-solid fa-mobile"></i> +</button>
+        </div>
+      </div>
+
+    </div>
+    <div id="timeout-timer-container" class="horizontal-container">
+      <div class="object-container">
+        <i onclick="toggleTimeoutTimerSettings()" id="timeout-timer-cogs" class="fa-solid fa-gears timer-settings"></i>
+        <h4 class="small-header header-shift">Timeout Timer</h4>
+        <div class="timer-container">
+          <div id="timeout-countdown" class="timer-text">1:00</div>
+          <div id="timeout-millisecond-countdown" class="timer-text-small"></div>
+        </div>
+      </div>
+
+      <div id="timeout-timer-settings" class="button-container-settings timer-settings-container">
+        <div class="vertical-buttons">
+          <button onclick="timeoutTime = timeoutTime + 100;" class="grey-button small-grey"><i class="fa-solid fa-plus"></i></button>
+          <div class="time-settings-text">1s</div>
+          <button onclick="timeoutTime = timeoutTime - 100;" class="grey-button small-grey"><i class="fa-solid fa-minus"></i></button>
+        </div>
+        <div class="vertical-buttons">
+          <button onclick="timeoutTime = timeoutTime + 1000;" class="grey-button small-grey"><i class="fa-solid fa-plus"></i></button>
+          <div class="time-settings-text">10s</div>
+          <button onclick="timeoutTime = timeoutTime - 1000;" class="grey-button small-grey"><i class="fa-solid fa-minus"></i></button>
+        </div>
+        <div class="vertical-buttons">
+          <button onclick="timeoutTime = timeoutTime + 6000;" class="grey-button small-grey"><i class="fa-solid fa-plus"></i></button>
+          <div class="time-settings-text">1m</div>
+          <button onclick="timeoutTime = timeoutTime - 6000;" class="grey-button small-grey"><i class="fa-solid fa-minus"></i></button>
+        </div>
     </div>
 
-    <div id="half-timer-container" class="object-container">
-      <h4 class="small-header">Half Timer</h4>
-      <div class="timer-container">
-        <div id="match-countdown" class="timer-text">15:00</div>
-        <div id="match-millisecond-countdown" class="timer-text-small"></div>
+    </div>
+
+    <div id="half-timer-container" class="horizontal-container">
+      <div class="object-container">
+        <i onclick="toggleHalfTimerSettings()" id="half-timer-cogs" class="fa-solid fa-gears timer-settings"></i>
+        <h4 class="small-header">Half Timer</h4>
+        <div class="timer-container">
+          <div id="match-countdown" class="timer-text">15:00</div>
+          <div id="match-millisecond-countdown" class="timer-text-small"></div>
+        </div>
+      </div>
+
+      <div id="half-timer-settings" class="button-container-settings timer-settings-container">
+          <div class="vertical-buttons">
+            <button onclick="halfTime = halfTime + 100;" class="grey-button small-grey"><i class="fa-solid fa-plus"></i></button>
+            <div class="time-settings-text">1s</div>
+            <button onclick="halfTime = halfTime - 100;" class="grey-button small-grey"><i class="fa-solid fa-minus"></i></button>
+          </div>
+          <div class="vertical-buttons">
+            <button onclick="halfTime = halfTime + 1000;" class="grey-button small-grey"><i class="fa-solid fa-plus"></i></button>
+            <div class="time-settings-text">10s</div>
+            <button onclick="halfTime = halfTime - 1000;" class="grey-button small-grey"><i class="fa-solid fa-minus"></i></button>
+          </div>
+          <div class="vertical-buttons">
+            <button onclick="halfTime = halfTime + 6000;" class="grey-button small-grey"><i class="fa-solid fa-plus"></i></button>
+            <div class="time-settings-text">1m</div>
+            <button onclick="halfTime = halfTime - 6000;" class="grey-button small-grey"><i class="fa-solid fa-minus"></i></button>
+          </div>
       </div>
     </div>
 
-    <div id="set-timer-container" class="object-container">
-      <h4 class="small-header">Set Timer</h4>
-      <div class="timer-container">
-        <div id="set-countdown" class="timer-text">3:00</div>
-        <div id="set-millisecond-countdown" class="timer-text-small"></div>
+    <div id="set-timer-container" class="horizontal-container">
+      <div class="object-container">
+        <i onclick="toggleSetTimerSettings()" id="set-timer-cogs" class="fa-solid fa-gears timer-settings"></i>
+        <h4 class="small-header">Set Timer</h4>
+        <div class="timer-container">
+          <div id="set-countdown" class="timer-text">3:00</div>
+          <div id="set-millisecond-countdown" class="timer-text-small"></div>
+        </div>
       </div>
+
+      <div id="set-timer-settings" class="button-container-settings timer-settings-container">
+        <div class="vertical-buttons">
+          <button onclick="setTime = setTime + 100;" class="grey-button small-grey"><i class="fa-solid fa-plus"></i></button>
+          <div class="time-settings-text">1s</div>
+          <button onclick="setTime = setTime - 100;" class="grey-button small-grey"><i class="fa-solid fa-minus"></i></button>
+        </div>
+        <div class="vertical-buttons">
+          <button onclick="setTime = setTime + 1000;" class="grey-button small-grey"><i class="fa-solid fa-plus"></i></button>
+          <div class="time-settings-text">10s</div>
+          <button onclick="setTime = setTime - 1000;" class="grey-button small-grey"><i class="fa-solid fa-minus"></i></button>
+        </div>
+        <div class="vertical-buttons">
+          <button onclick="setTime = setTime + 6000;" class="grey-button small-grey"><i class="fa-solid fa-plus"></i></button>
+          <div class="time-settings-text">1m</div>
+          <button onclick="setTime = setTime - 6000;" class="grey-button small-grey"><i class="fa-solid fa-minus"></i></button>
+        </div>
+    </div>
     </div>
 
-    <div id="halftime-break-timer-container" class="object-container">
-      <h4 class="small-header">Half Time Break</h4>
-      <div class="timer-container">
-        <div id="break-countdown" class="timer-text">3:00</div>
-        <div id="break-millisecond-countdown" class="timer-text-small"></div>
+    <div id="halftime-break-timer-container" class="horizontal-container">
+      <div class="object-container">
+        <i onclick="toggleHalftimeBreakTimerSettings()" id="halftime-break-timer-cogs" class="fa-solid fa-gears timer-settings"></i>
+        <h4 class="small-header header-shift">Half Time Break</h4>
+        <div class="timer-container">
+          <div id="break-countdown" class="timer-text">3:00</div>
+          <div id="break-millisecond-countdown" class="timer-text-small"></div>
+        </div>
       </div>
+
+      <div id="halftime-break-timer-settings" class="button-container-settings timer-settings-container">
+        <div class="vertical-buttons">
+          <button onclick="halfTime = halfTime + 100;" class="grey-button small-grey"><i class="fa-solid fa-plus"></i></button>
+          <div class="time-settings-text">1s</div>
+          <button onclick="halfTime = halfTime - 100;" class="grey-button small-grey"><i class="fa-solid fa-minus"></i></button>
+        </div>
+        <div class="vertical-buttons">
+          <button onclick="halfTime = halfTime + 1000;" class="grey-button small-grey"><i class="fa-solid fa-plus"></i></button>
+          <div class="time-settings-text">10s</div>
+          <button onclick="halfTime = halfTime - 1000;" class="grey-button small-grey"><i class="fa-solid fa-minus"></i></button>
+        </div>
+        <div class="vertical-buttons">
+          <button onclick="halfTime = halfTime + 6000;" class="grey-button small-grey"><i class="fa-solid fa-plus"></i></button>
+          <div class="time-settings-text">1m</div>
+          <button onclick="halfTime = halfTime - 6000;" class="grey-button small-grey"><i class="fa-solid fa-minus"></i></button>
+        </div>
+    </div>
+
     </div>
 
     <div class="object-container">
       <h4 class="small-header">Timer Controls</h4>
       <div class="button-container">
         <button id="play-pause-button" onclick="changePauseState()" class="button-standard"><i class="fa-solid fa-play"></i> <span class="button-text">start</span></button>
+        <button id="timeout-play-pause-button" onclick="changeTimeoutPauseState()" class="button-standard"><i class="fa-solid fa-play"></i> <span class="button-text">start</span></button>
         <button id="pause-backup-button" onclick="backupPause()" class="button-standard"><i class="fa-solid fa-pause"></i> <span class="button-text">pause</span></button>
         <button id="new-set-button" onclick="resetSetTimer()" class="button-standard"><i class="fa-solid fa-arrow-rotate-left"></i> <span class="button-text">set</span></button>
         <button id="end-half-button" onclick="endHalf()" class="button-standard button-orange"><i class="fa-solid fa-forward-step"></i> <span class="button-text">half</span></button>
         <button id="end-match-button" onclick="endMatch()" class="button-standard button-orange"><i class="fa-solid fa-forward-step"></i> <span class="button-text">match</span></button>
         <button id="end-break-button" onclick="endBreak()" class="button-standard button-orange"><i class="fa-solid fa-forward-step"></i> <span class="button-text">break</span></button>
+        <button id="end-timeout-button" onclick="endTimeout()" class="button-standard button-orange"><i class="fa-solid fa-forward-step"></i> <span class="button-text">timeout</span></button>
         <button id="reset-button" onclick="resetAll()" class="button-standard button-red"><i class="fa-solid fa-arrow-rotate-left"></i> <span class="button-text">all</span></button>
       </div>
     </div>
