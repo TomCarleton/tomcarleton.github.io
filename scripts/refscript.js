@@ -752,7 +752,7 @@ function endHalf(){
 
   // Manage timers
   setPaused = true;
-  matchPaused = true;
+  matchPaused = false;
   halfTime = halfBreakTime;
   halfBreak = true;
 
@@ -811,6 +811,7 @@ function endTimeout(){
       newSetButton.style.display = "block";
       pauseButton.style.display = "block";
       pauseButton.innerHTML = '<i class="fa-solid fa-play"></i> <span class="button-text">start</span>';
+      matchPaused = false;
       break;
     case "half-time":
       headerText.innerHTML = "Half Time";
@@ -818,6 +819,7 @@ function endTimeout(){
       endBreakButton.style.display = "block";
       pauseButton.style.display = "block";
       pauseButton.innerHTML = '<i class="fa-solid fa-play"></i> <span class="button-text">start</span>';
+      matchPaused = false;
       break;
     case "second-half":
       headerText.innerHTML = "Second Half";
@@ -826,6 +828,7 @@ function endTimeout(){
       newSetButton.style.display = "block";
       pauseButton.style.display = "block";
       pauseButton.innerHTML = '<i class="fa-solid fa-play"></i> <span class="button-text">start</span>';
+      matchPaused = false;
       break;
   }
 }
