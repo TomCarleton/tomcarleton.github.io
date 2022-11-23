@@ -377,6 +377,10 @@ function timeoutStart(element){
   if (!headerText.innerHTML.includes("Timeout"))
     headerText.innerHTML += " (Timeout)";
 
+  // Change timeout timer colours
+  timeoutCountdownElem.classList.replace("timer-text-red", "timer-text");
+  timeoutMillisecElem.classList.replace("timer-text-small-red", "timer-text-small");
+
   // Reduce timeout counter to 0
   if (element.innerHTML == '<i class="fa-solid fa-stopwatch"></i> 1')
     element.innerHTML = '<i class="fa-solid fa-stopwatch"></i> 0';
@@ -512,6 +516,11 @@ function updateMatchCountdown(){
   if (setTime == 0){
     setCountdownElem.classList.replace("timer-text", "timer-text-red");
     setMillisecElem.classList.replace("timer-text-small", "timer-text-small-red");
+  }
+
+  if (timeoutTime == 0){
+    timeoutCountdownElem.classList.replace("timer-text", "timer-text-red");
+    timeoutMillisecElem.classList.replace("timer-text-small", "timer-text-small-red");
   }
 }
 
@@ -811,6 +820,7 @@ function endTimeout(){
       newSetButton.style.display = "block";
       pauseButton.style.display = "block";
       pauseButton.innerHTML = '<i class="fa-solid fa-play"></i> <span class="button-text">start</span>';
+      pauseBackupButton.style.display = "block";
       matchPaused = false;
       break;
     case "half-time":
@@ -828,6 +838,7 @@ function endTimeout(){
       newSetButton.style.display = "block";
       pauseButton.style.display = "block";
       pauseButton.innerHTML = '<i class="fa-solid fa-play"></i> <span class="button-text">start</span>';
+      pauseBackupButton.style.display = "block";
       matchPaused = false;
       break;
   }
