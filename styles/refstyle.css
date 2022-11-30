@@ -341,6 +341,7 @@ align-items: center;
 
 .timer-text{
   font-size: 36px;
+  margin-bottom: 3px;
 }
 
 .timer-text-red{
@@ -360,7 +361,7 @@ align-items: center;
 
 .small-header{
   text-align: center;
-  margin: 0 10px;
+  margin: 0 10px -5px;
   font-size: 15px;
   color: rgb(158, 158, 158);
 }
@@ -398,6 +399,21 @@ align-items: center;
   color: rgb(211, 211, 211);
   width: fit-content;
   text-align: center;
+}
+
+.final-set{
+  position: absolute;
+  bottom: -11px;
+  right: 10px;
+  padding: 0 2px;
+  display: none;
+
+  font-family: Kanit, Arial;
+  font-weight: 600;
+  text-align: center;
+  color: rgb(207, 52, 52);
+
+  background-color:rgb(48, 48, 48);
 }
 
 .button-container{

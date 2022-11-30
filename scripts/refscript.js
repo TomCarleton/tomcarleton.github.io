@@ -69,6 +69,7 @@ const breakCountdownElem = document.getElementById('break-countdown');
 const breakMillisecElem = document.getElementById('break-millisecond-countdown');
 const timeoutCountdownElem = document.getElementById('timeout-countdown');
 const timeoutMillisecElem = document.getElementById('timeout-millisecond-countdown');
+const finalSetAlert = document.getElementById('final-set-alert');
 
 const pauseButton = document.getElementById('play-pause-button');
 const pauseBackupButton = document.getElementById('pause-backup-button');
@@ -499,6 +500,7 @@ function updateMatchCountdown(){
       setTime = halfTime;
       pauseBackupButton.style.display = "none";
       matchPaused = true;
+      finalSetAlert.style.display = "block"
     }
     setTime = halfTime;
   }
@@ -710,6 +712,7 @@ function resetSetTimer(){
       setTime = minSetTime;
       halfTime = minSetTime;
       pauseBackupButton.style.display = "none";
+      finalSetAlert.style.display = "block";
     } else {
       setTime = halfTime;
       lowTime = true;
@@ -744,6 +747,7 @@ function endHalf(){
   endHalfButton.style.display = "none";
   halfTimerContainer.style.display = "none";
   setTimerContainer.style.display = "none";
+  finalSetAlert.style.display = "none";
 
   // Show new elements
   halftimeBreakTimerContainer.style.display = "flex";
@@ -775,6 +779,7 @@ function endBreak(){
   halftimeBreakTimerContainer.style.display = "none";
   endBreakButton.style.display = "none";
   pauseBackupButton.style.display = "none";
+  finalSetAlert.style.display = "none";
 
   // Show new elements
   newSetButton.style.display = "block";
@@ -820,8 +825,6 @@ function endTimeout(){
       newSetButton.style.display = "block";
       pauseButton.style.display = "block";
       pauseButton.innerHTML = '<i class="fa-solid fa-play"></i> <span class="button-text">start</span>';
-      pauseBackupButton.style.display = "block";
-      matchPaused = false;
       break;
     case "half-time":
       headerText.innerHTML = "Half Time";
@@ -829,7 +832,6 @@ function endTimeout(){
       endBreakButton.style.display = "block";
       pauseButton.style.display = "block";
       pauseButton.innerHTML = '<i class="fa-solid fa-play"></i> <span class="button-text">start</span>';
-      matchPaused = false;
       break;
     case "second-half":
       headerText.innerHTML = "Second Half";
@@ -838,8 +840,6 @@ function endTimeout(){
       newSetButton.style.display = "block";
       pauseButton.style.display = "block";
       pauseButton.innerHTML = '<i class="fa-solid fa-play"></i> <span class="button-text">start</span>';
-      pauseBackupButton.style.display = "block";
-      matchPaused = false;
       break;
   }
 }
@@ -858,7 +858,7 @@ function endMatch(){
   pauseBackupButton.style.display = "none";
   halfTimerContainer.style.display = "none";
   setTimerContainer.style.display = "none";
-
+  finalSetAlert.style.display = "none";
 
   // Change header text
   headerText.innerHTML = "Full Time";
@@ -895,8 +895,8 @@ function resetAll(){
   teamTwoScoreText.innerHTML = teamTwoScore;
 
   // Reset timeout counts
-  timeoutButtonOne.innerHTML = '<i class="fa-solid fa-stopwatch"></i> 1'
-  timeoutButtonTwo.innerHTML = '<i class="fa-solid fa-stopwatch"></i> 1'
+  timeoutButtonOne.innerHTML = '<i class="fa-solid fa-stopwatch"></i> 1';
+  timeoutButtonTwo.innerHTML = '<i class="fa-solid fa-stopwatch"></i> 1';
 
   // Remove all cards
   while (blueCardCount > 0){
@@ -923,10 +923,11 @@ function resetAll(){
   pauseButton.style.display = "block";
 
   // Show and hide relevant timer containers
-  halftimeBreakTimerContainer.style.display = "none"
-  timeoutTimerContainer.style.display = "none"
+  halftimeBreakTimerContainer.style.display = "none";
+  timeoutTimerContainer.style.display = "none";
   halfTimerContainer.style.display = "flex";
   setTimerContainer.style.display = "flex";
+  finalSetAlert.style.display = "none";
 
   // Reset header text
   headerText.innerHTML = "First Half";
