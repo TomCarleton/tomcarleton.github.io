@@ -1,6 +1,6 @@
 body{
   margin: 0 0 0 0;
-  background-color: rgb(31, 31, 31);
+  background-color: rgb(40, 40, 40);
 }
 
 h1{
@@ -17,7 +17,7 @@ h3{
 .app-container{
   background-color: rgb(48, 48, 48);
   width: auto;
-  height: 100vh;
+  height: fit-content;
   font-family: Kanit, Arial;
   color: white;
   display: flex;
