@@ -37,11 +37,11 @@ let halfBreak = false;
 let setTimerFadeAmount = 0.5; // Toggle set timer fade when inactive
 
 // Calculate window width adjustments
-let settingMenuOffset = "0px"
+let settingMenuOffset = 0
 if (window.innerWidth < 450){
-  settingMenuOffset = "40px";
+  settingMenuOffset = 40;
 } else {
-  settingMenuOffset = "0px";
+  settingMenuOffset = 0;
 }
 
 // Get elements from html
@@ -220,12 +220,12 @@ function resizeEvent(){
   teamTwoName.style.height = (teamTwoName.scrollHeight) + "px";
 
   if (window.innerWidth < 450){
-    settingMenuOffset = "40px";
+    settingMenuOffset = 40;
   } else {
-    settingMenuOffset = "0px";
+    settingMenuOffset = 0;
   }
-  colourSelectors.style.top = settingMenuOffset;
-  cardSelectors.style.top = settingMenuOffset;
+  colourSelectors.style.top = `${settingMenuOffset}px`;
+  cardSelectors.style.top = `${settingMenuOffset}px`;
 }
 
 // Methods to edit team score displays
@@ -244,24 +244,24 @@ function toggleColours(){
     if(colourButtonOne.style.backgroundColor === "rgb(90, 90, 90)" || cardButtonOne.style.backgroundColor === "rgb(90, 90, 90)"){
       // Open colour selector
       showColours();
-      colourSelectors.style.top = settingMenuOffset;
+      colourSelectors.style.top = `${settingMenuOffset}px`;
       // Close card selector
       hideCards();
     } else {
       showColours();
-      colourSelectors.style.top = "-45px";
+      colourSelectors.style.top = `${settingMenuOffset - 45}px`;
       colourSelectors.animate({
-      top: settingMenuOffset
+      top: `${settingMenuOffset}px`
       }, {duration: 150, easing: "cubic-bezier(.31,.84,.42,.98)"}).onfinish = function(){
-        colourSelectors.style.top = settingMenuOffset;
+        colourSelectors.style.top = `${settingMenuOffset}px`;
       };
     }
   } else {
-    colourSelectors.style.top = settingMenuOffset;
+    colourSelectors.style.top = `${settingMenuOffset}px`;
     colourSelectors.animate({
-      top: "-45px"
+      top: `${settingMenuOffset - 45}px`
       }, {duration: 150, easing: "cubic-bezier(.31,.84,.42,.98)"}).onfinish = function(){
-        colourSelectors.style.top = "-45px";
+        colourSelectors.style.top = `${settingMenuOffset - 45}px`;
         hideColours();
       };
   }
@@ -323,24 +323,24 @@ function toggleCards(){
     if(colourButtonOne.style.backgroundColor === "rgb(90, 90, 90)" || cardButtonOne.style.backgroundColor === "rgb(90, 90, 90)"){
       // Open card selector
       showCards();
-      cardSelectors.style.top = settingMenuOffset;
+      cardSelectors.style.top = `${settingMenuOffset}px`;
       // Close colour selector
       hideColours();
     } else {
       showCards();
-      cardSelectors.style.top = "-45px";
+      cardSelectors.style.top = `${settingMenuOffset - 45}px`;
       cardSelectors.animate({
-      top: settingMenuOffset
+      top: `${settingMenuOffset}px`
       }, {duration: 150, easing: "cubic-bezier(.31,.84,.42,.98)"}).onfinish = function(){
-        cardSelectors.style.top = settingMenuOffset;
+        cardSelectors.style.top = `${settingMenuOffset}px`;
       };
     }
   } else {
-    cardSelectors.style.top = settingMenuOffset;
+    cardSelectors.style.top = `${settingMenuOffset}px`;
     cardSelectors.animate({
-      top: "-45px"
+      top: `${settingMenuOffset - 45}px`
       }, {duration: 150, easing: "cubic-bezier(.31,.84,.42,.98)"}).onfinish = function(){
-        cardSelectors.style.top = "-45px";
+        cardSelectors.style.top = `${settingMenuOffset - 45}px`;
         hideCards();
       };
   }
