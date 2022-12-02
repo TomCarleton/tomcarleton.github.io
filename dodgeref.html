@@ -12,10 +12,12 @@
   <link href="styles/refstyle.css" rel="stylesheet">
 </head>
 <body onresize="resizeEvent()">
+  <!--MATCH HEADER-->
   <div class="app-container">
     <h1 id="header-text">First Half</h1>
     <i onclick="toggleSidebar(this)" class="fa-solid fa-gear settings-icon"></i>
 
+    <!--LEFT SETTINGS BAR-->
     <div id="left-sidebar" class="left-sidebar">
       <h1 class="settings-header">Settings</h1>
       <h3>Half Length (minutes)</h3>
@@ -36,6 +38,7 @@
       <button id="reset-button" onclick="resetAll()" class="button-standard button-red"><i class="fa-solid fa-arrow-rotate-left"></i> <span class="button-text">all</span></button>
     </div>
 
+    <!--LEFT TEAM SCORE COUNTER-->
     <div class="horizontal-container">
       <div id="team-one-container" class="object-container team-one">
         <textarea id="team-one-name" class="team-header" oninput="auto_grow(this)" rows="1"></textarea>
@@ -46,6 +49,7 @@
         </div>
       </div>
   
+      <!--RIGHT TEAM SCORE COUNTER-->
       <div id="team-two-container" class="object-container team-two">
         <textarea id="team-two-name" class="team-header" oninput="auto_grow(this)" rows="1"></textarea>
         <div id="team-two-score" class="score-number">0</div>
@@ -56,6 +60,7 @@
       </div>
     </div>
 
+    <!--LEFT TEAM CARDS DISPLAY-->
     <div id="card-display" class="horizontal-container">
       <div class="button-container-settings no-background-container">
         <button id="blue-card-container-one" onclick="toggleCloseButton(this)" class="grey-button card-container blue-container">
@@ -77,6 +82,7 @@
         </button>
       </div>
 
+      <!--RIGHT TEAM CARDS DISPLAY-->
       <div class="button-container-settings no-background-container">
         <button id="blue-card-container-two" onclick="toggleCloseButton(this)" class="grey-button card-container blue-container">
           <i style="color:rgb(97, 105, 206);" class="fa-solid fa-mobile"></i>
@@ -98,6 +104,7 @@
       </div>
     </div>
 
+    <!--LEFT TEAM SETTINGS BAR-->
     <div class="horizontal-container container-relative">
       <div class="button-container-settings">
         <button onclick="editNameOne()" class="grey-button"><i class="fa-solid fa-pen-to-square"></i></button>
@@ -107,6 +114,7 @@
         <button onclick="timeoutStart(this)" id="grey-timeout-button-one" class="grey-button"><i class="fa-solid fa-stopwatch"></i> 1</button>
       </div>
 
+      <!--RIGHT TEAM SETTINGS BAR-->
       <div class="button-container-settings">
         <button onclick="editNameTwo()" class="grey-button"><i class="fa-solid fa-pen-to-square"></i></button>
         <button onclick="toggleColours()" id="grey-colour-button-two" class="grey-button"><i class="fa-solid fa-palette"></i></button>
@@ -115,7 +123,8 @@
         <button onclick="timeoutStart(this)" id="grey-timeout-button-two" class="grey-button"><i class="fa-solid fa-stopwatch"></i> 1</button>
       </div>
 
-      <div id="colour-selector" class="horizontal-container">
+      <!--LEFT TEAM COLOUR SELECT MENU-->
+      <div id="colour-selector" class="horizontal-container" style="position: absolute">
         <div class="button-container-settings button-container-colour-one">
           <button onclick="editColourOneTop()" class="grey-colour-button">Top
             <input oninput="colourUpdate()" id="colour-one-top" class="colour-button" type="color">
@@ -125,6 +134,7 @@
           </button>
         </div>
   
+        <!--RIGHT TEAM COLOUR SELECT MENU-->
         <div class="button-container-settings button-container-colour-two">
           <button onclick="editColourTwoTop()" class="grey-colour-button">Top
             <input oninput="colourUpdate()" id="colour-two-top" class="colour-button" type="color">
@@ -135,13 +145,15 @@
         </div>
       </div>
 
-      <div id="card-selector" class="horizontal-container">
+      <!--LEFT TEAM CARD SELECT MENU-->
+      <div id="card-selector" class="horizontal-container" style="position: absolute">
         <div class="button-container-settings button-container-colour-one">
           <button onclick="teamOneBlueCard()" class="grey-button blue-card"><i class="fa-solid fa-mobile"></i> +</button>
           <button onclick="teamOneYellowCard()" class="grey-button yellow-card"><i class="fa-solid fa-mobile"></i> +</button>
           <button onclick="teamOneRedCard()" class="grey-button red-card"><i class="fa-solid fa-mobile"></i> +</button>
         </div>
   
+        <!--RIGHT TEAM CARD SELECT MENU-->
         <div class="button-container-settings button-container-colour-two">
           <button onclick="teamTwoBlueCard()" class="grey-button blue-card"><i class="fa-solid fa-mobile"></i> +</button>
           <button onclick="teamTwoYellowCard()" class="grey-button yellow-card"><i class="fa-solid fa-mobile"></i> +</button>
@@ -149,9 +161,10 @@
         </div>
       </div>
 
+      <!--TIMEOUT TIMER BOX-->
     </div>
     <div id="timeout-timer-container" class="horizontal-container">
-      <div class="object-container">
+      <div class="object-container" style="z-index: 2">
         <i onclick="toggleTimeoutTimerSettings()" id="timeout-timer-cogs" class="fa-solid fa-gears timer-settings"></i>
         <h4 class="small-header header-shift">Timeout Timer</h4>
         <div class="timer-container">
@@ -160,6 +173,7 @@
         </div>
       </div>
 
+      <!--TIMER SETTINGS-->
       <div id="timeout-timer-settings" class="button-container-settings timer-settings-container">
         <div class="vertical-buttons">
           <button onclick="timeoutTime = timeoutTime + 100;" class="grey-button small-grey"><i class="fa-solid fa-plus"></i></button>
@@ -176,12 +190,12 @@
           <div class="time-settings-text">1m</div>
           <button onclick="timeoutTime = timeoutTime - 6000;" class="grey-button small-grey"><i class="fa-solid fa-minus"></i></button>
         </div>
+      </div>
     </div>
 
-    </div>
-
+    <!--HALF TIMER BOX-->
     <div id="half-timer-container" class="horizontal-container">
-      <div class="object-container">
+      <div class="object-container" style="z-index: 2">
         <i onclick="toggleHalfTimerSettings()" id="half-timer-cogs" class="fa-solid fa-gears timer-settings"></i>
         <h4 class="small-header">Half Timer</h4>
         <div class="timer-container">
@@ -190,6 +204,7 @@
         </div>
       </div>
 
+      <!--TIMER SETTINGS-->
       <div id="half-timer-settings" class="button-container-settings timer-settings-container">
           <div class="vertical-buttons">
             <button onclick="halfTime = halfTime + 100;" class="grey-button small-grey"><i class="fa-solid fa-plus"></i></button>
@@ -209,17 +224,19 @@
       </div>
     </div>
 
+    <!--SET TIMER BOX-->
     <div id="set-timer-container" class="horizontal-container">
-      <div class="object-container">
+      <div class="object-container" style="z-index: 2">
         <i onclick="toggleSetTimerSettings()" id="set-timer-cogs" class="fa-solid fa-gears timer-settings"></i>
         <h4 class="small-header">Set Timer</h4>
-        <div class="timer-container">
+        <div id="set-timer-text-container" class="timer-container timer-inactive-display">
           <div id="set-countdown" class="timer-text">3:00</div>
           <div id="set-millisecond-countdown" class="timer-text-small"></div>
         </div>
         <div class="final-set" id="final-set-alert">FINAL SET</div>
       </div>
 
+      <!--TIMER SETTINGS-->
       <div id="set-timer-settings" class="button-container-settings timer-settings-container">
         <div class="vertical-buttons">
           <button onclick="setTime = setTime + 100;" class="grey-button small-grey"><i class="fa-solid fa-plus"></i></button>
@@ -239,8 +256,9 @@
     </div>
     </div>
 
+    <!--HALTTIME BREAK TIMER BOX-->
     <div id="halftime-break-timer-container" class="horizontal-container">
-      <div class="object-container">
+      <div class="object-container" style="z-index: 2">
         <i onclick="toggleHalftimeBreakTimerSettings()" id="halftime-break-timer-cogs" class="fa-solid fa-gears timer-settings"></i>
         <h4 class="small-header header-shift">Half Time Break</h4>
         <div class="timer-container">
@@ -249,6 +267,7 @@
         </div>
       </div>
 
+      <!--TIMER SETTINGS-->
       <div id="halftime-break-timer-settings" class="button-container-settings timer-settings-container">
         <div class="vertical-buttons">
           <button onclick="halfTime = halfTime + 100;" class="grey-button small-grey"><i class="fa-solid fa-plus"></i></button>
@@ -265,10 +284,10 @@
           <div class="time-settings-text">1m</div>
           <button onclick="halfTime = halfTime - 6000;" class="grey-button small-grey"><i class="fa-solid fa-minus"></i></button>
         </div>
+      </div>
     </div>
 
-    </div>
-
+    <!--TIMER CONTROL BUTTONS-->
     <div class="object-container">
       <h4 class="small-header">Timer Controls</h4>
       <div class="button-container">

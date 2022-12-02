@@ -33,8 +33,10 @@ let setPaused = true;
 let timeoutPaused = true;
 let halfBreak = false;
 
+// Settings options
+let setTimerFadeAmount = 0.5; // Toggle set timer fade when inactive
+
 // Get elements from html
-const sideBar = document.getElementById('left-sidebar');
 const startHalfTimeInput = document.getElementById('start-half-time');
 const startSetTimeInput = document.getElementById('start-set-time');
 const minimumSetTimeInput = document.getElementById('minimum-set-time');
@@ -92,6 +94,15 @@ const timeoutTimerCogs = document.getElementById('timeout-timer-cogs');
 
 const headerText = document.getElementById('header-text');
 
+// Set sidebar invisible;
+const sideBar = document.getElementById('left-sidebar');
+sideBar.style.left = "-300px";
+sideBar.style.display = "none";
+
+// Assign set timer inactivity opacity
+const setTimerElem = document.getElementById('set-timer-text-container');
+setTimerElem.style.opacity = setTimerFadeAmount;
+
 // Set default team names
 teamOneName.value = "Team Blue";
 teamTwoName.value = "Team Red";
@@ -146,14 +157,34 @@ function calculateTimings(){
 
 // Method to show/hide sidebar
 function toggleSidebar(element){
+  // Cog animation
+  element.animate({
+    transform: "rotate(180deg)"
+    }, {duration: 250, easing: "cubic-bezier(.5,0,.5,1)"});
+
   if (element.style.backgroundColor == "rgb(40, 40, 40)" || element.style.backgroundColor == ""){
     // Open timer settings
     sideBar.style.display = "flex";
     element.style.backgroundColor = "rgb(75, 75, 75)";
+
+    // Munu animation
+    sideBar.animate({
+      left: "0"
+      }, {duration: 250, easing: "cubic-bezier(.21,.52,.61,.91)"}).onfinish = function(){
+        sideBar.style.left = "0";
+      };
+
   } else {
     // Close timer settings
-    sideBar.style.display = "none";
     element.style.backgroundColor = "rgb(40, 40, 40)";
+
+    // Menu animation
+    sideBar.animate({
+      left: "-300px"
+      }, {duration: 250, easing: "cubic-bezier(.52,.21,.91,.61)"}).onfinish = function(){
+        sideBar.style.left = "-300px",
+        sideBar.style.display = "none";
+      };
   }
 }
 
@@ -193,12 +224,30 @@ function editNameTwo(){
 // Method to show/hide colour selectors
 function toggleColours(){
   if (colourButtonOne.style.backgroundColor === "rgb(55, 55, 55)"){
-    // Open colour selector
-    showColours();
-    // Close card selector
-    hideCards();
+
+    if(colourButtonOne.style.backgroundColor === "rgb(90, 90, 90)" || cardButtonOne.style.backgroundColor === "rgb(90, 90, 90)"){
+      // Open colour selector
+      showColours();
+      colourSelectors.style.top = "0";
+      // Close card selector
+      hideCards();
+    } else {
+      showColours();
+      colourSelectors.style.top = "-45px";
+      colourSelectors.animate({
+      top: "0"
+      }, {duration: 150, easing: "cubic-bezier(.31,.84,.42,.98)"}).onfinish = function(){
+        colourSelectors.style.top = "0";
+      };
+    }
   } else {
-    hideColours();
+    colourSelectors.style.top = "0";
+    colourSelectors.animate({
+      top: "-45px"
+      }, {duration: 150, easing: "cubic-bezier(.31,.84,.42,.98)"}).onfinish = function(){
+        colourSelectors.style.top = "-45px";
+        hideColours();
+      };
   }
 }
 
@@ -254,12 +303,30 @@ function resetTeamTwo(){
 // Method to show/hide card selectors
 function toggleCards(){
   if (cardButtonOne.style.backgroundColor === "rgb(55, 55, 55)"){
-    // Open card selector
-    showCards();
-    // Close color selector
-    hideColours();
+
+    if(colourButtonOne.style.backgroundColor === "rgb(90, 90, 90)" || cardButtonOne.style.backgroundColor === "rgb(90, 90, 90)"){
+      // Open card selector
+      showCards();
+      cardSelectors.style.top = "0";
+      // Close colour selector
+      hideColours();
+    } else {
+      showCards();
+      cardSelectors.style.top = "-45px";
+      cardSelectors.animate({
+      top: "0"
+      }, {duration: 150, easing: "cubic-bezier(.31,.84,.42,.98)"}).onfinish = function(){
+        cardSelectors.style.top = "0";
+      };
+    }
   } else {
-    hideCards();
+    cardSelectors.style.top = "0";
+    cardSelectors.animate({
+      top: "-45px"
+      }, {duration: 150, easing: "cubic-bezier(.31,.84,.42,.98)"}).onfinish = function(){
+        cardSelectors.style.top = "-45px";
+        hideCards();
+      };
   }
 }
 
@@ -617,48 +684,120 @@ function updateBlueCardCount(){
 function toggleHalfTimerSettings(){
   if (halfTimerCogs.style.backgroundColor == "rgb(40, 40, 40)"){
     // Open timer settings
-    document.getElementById('half-timer-settings').style.display = "flex";
+    settingsElem = document.getElementById('half-timer-settings');
+    settingsElem.style.display = "flex";
     halfTimerCogs.style.backgroundColor = "rgb(75, 75, 75)";
+
+    // Animation
+    settingsElem.style.marginLeft = "-83px"
+    settingsElem.animate({
+      marginLeft: "-5px"
+      }, {duration: 150, easing: "cubic-bezier(.31,.84,.42,.98)"}).onfinish = function(){
+        settingsElem.style.marginLeft = "-5px"
+      };
   } else {
     // Close timer settings
-    document.getElementById('half-timer-settings').style.display = "none";
+    settingsElem = document.getElementById('half-timer-settings');
     halfTimerCogs.style.backgroundColor = "rgb(40, 40, 40)";
+
+    // Animation
+    settingsElem.style.marginLeft = "-5px"
+    settingsElem.animate({
+      marginLeft: "-83px"
+      }, {duration: 150, easing: "cubic-bezier(.31,.84,.42,.98)"}).onfinish = function(){
+        settingsElem.style.marginLeft = "-83px"
+        settingsElem.style.display = "none";
+      };
   }
 }
 
 function toggleSetTimerSettings(){
   if (setTimerCogs.style.backgroundColor == "rgb(40, 40, 40)"){
     // Open timer settings
-    document.getElementById('set-timer-settings').style.display = "flex";
+    settingsElem = document.getElementById('set-timer-settings');
+    settingsElem.style.display = "flex";
     setTimerCogs.style.backgroundColor = "rgb(75, 75, 75)";
+
+    // Animation
+    settingsElem.style.marginLeft = "-83px"
+    settingsElem.animate({
+      marginLeft: "-5px"
+      }, {duration: 150, easing: "cubic-bezier(.31,.84,.42,.98)"}).onfinish = function(){
+        settingsElem.style.marginLeft = "-5px"
+      };
   } else {
     // Close timer settings
-    document.getElementById('set-timer-settings').style.display = "none";
+    settingsElem = document.getElementById('set-timer-settings');
     setTimerCogs.style.backgroundColor = "rgb(40, 40, 40)";
+
+    // Animation
+    settingsElem.style.marginLeft = "-5px"
+    settingsElem.animate({
+      marginLeft: "-83px"
+      }, {duration: 150, easing: "cubic-bezier(.31,.84,.42,.98)"}).onfinish = function(){
+        settingsElem.style.marginLeft = "-83px"
+        settingsElem.style.display = "none";
+      };
   }
 }
 
 function toggleHalftimeBreakTimerSettings(){
   if (halftimeBreakTimerCogs.style.backgroundColor == "rgb(40, 40, 40)"){
     // Open timer settings
-    document.getElementById('halftime-break-timer-settings').style.display = "flex";
+    settingsElem = document.getElementById('halftime-break-timer-settings');
+    settingsElem.style.display = "flex";
     halftimeBreakTimerCogs.style.backgroundColor = "rgb(75, 75, 75)";
+
+    // Animation
+    settingsElem.style.marginLeft = "-83px"
+    settingsElem.animate({
+      marginLeft: "-5px"
+      }, {duration: 150, easing: "cubic-bezier(.31,.84,.42,.98)"}).onfinish = function(){
+        settingsElem.style.marginLeft = "-5px"
+      };
   } else {
     // Close timer settings
-    document.getElementById('halftime-break-timer-settings').style.display = "none";
+    settingsElem = document.getElementById('halftime-break-timer-settings');
     halftimeBreakTimerCogs.style.backgroundColor = "rgb(40, 40, 40)";
+
+    // Animation
+    settingsElem.style.marginLeft = "-5px"
+    settingsElem.animate({
+      marginLeft: "-83px"
+      }, {duration: 150, easing: "cubic-bezier(.31,.84,.42,.98)"}).onfinish = function(){
+        settingsElem.style.marginLeft = "-83px"
+        settingsElem.style.display = "none";
+      };
   }
 }
 
 function toggleTimeoutTimerSettings(){
   if (timeoutTimerCogs.style.backgroundColor == "rgb(40, 40, 40)"){
     // Open timer settings
-    document.getElementById('timeout-timer-settings').style.display = "flex";
+    settingsElem = document.getElementById('timeout-timer-settings');
+    settingsElem.style.display = "flex";
     timeoutTimerCogs.style.backgroundColor = "rgb(75, 75, 75)";
+
+    // Animation
+    settingsElem.style.marginLeft = "-83px"
+    settingsElem.animate({
+      marginLeft: "-5px"
+      }, {duration: 150, easing: "cubic-bezier(.31,.84,.42,.98)"}).onfinish = function(){
+        settingsElem.style.marginLeft = "-5px"
+      };
   } else {
     // Close timer settings
-    document.getElementById('timeout-timer-settings').style.display = "none";
+    settingsElem = document.getElementById('timeout-timer-settings');
     timeoutTimerCogs.style.backgroundColor = "rgb(40, 40, 40)";
+
+    // Animation
+    settingsElem.style.marginLeft = "-5px"
+    settingsElem.animate({
+      marginLeft: "-83px"
+      }, {duration: 150, easing: "cubic-bezier(.31,.84,.42,.98)"}).onfinish = function(){
+        settingsElem.style.marginLeft = "-83px"
+        settingsElem.style.display = "none";
+      };
   }
 }
 
@@ -672,10 +811,12 @@ function changePauseState(){
     matchPaused = true;
     setPaused = true;
     pauseButton.innerHTML = '<i class="fa-solid fa-play"></i> <span class="button-text">start</span>';
+    setTimerElem.style.opacity = setTimerFadeAmount;
   } else {
     matchPaused = false;
     setPaused = false;
     pauseButton.innerHTML = '<i class="fa-solid fa-pause"></i> <span class="button-text">pause</span>';
+    setTimerElem.style.opacity = 1;
   }
 }
 
@@ -703,6 +844,9 @@ function resetSetTimer(){
   matchMillisecElem.classList.replace("timer-text-small-red", "timer-text-small");
   setCountdownElem.classList.replace("timer-text-red", "timer-text");
   setMillisecElem.classList.replace("timer-text-small-red", "timer-text-small");
+
+  // Change set timer inactivity opacity
+  setTimerElem.style.opacity = setTimerFadeAmount;
 
   // Check if match timer is less than a full set
   if (halfTime <= (totalSetTime)){
@@ -763,6 +907,9 @@ function endHalf(){
   breakCountdownElem.classList.replace("timer-text-red", "timer-text");
   breakMillisecElem.classList.replace("timer-text-small-red", "timer-text-small");
 
+  // Change set timer inactivity opacity
+  setTimerElem.style.opacity = setTimerFadeAmount;
+
   // Manage timers
   setPaused = true;
   matchPaused = false;
@@ -798,6 +945,9 @@ function endBreak(){
   matchMillisecElem.classList.replace("timer-text-small-red", "timer-text-small");
   setCountdownElem.classList.replace("timer-text-red", "timer-text");
   setMillisecElem.classList.replace("timer-text-small-red", "timer-text-small");
+
+  // Change set timer inactivity opacity
+  setTimerElem.style.opacity = setTimerFadeAmount;
 
   // Manage timers
   setPaused = true;
@@ -887,6 +1037,9 @@ function resetAll(){
 
   // Change button icon to play
   pauseButton.innerHTML = '<i class="fa-solid fa-play"></i> <span class="button-text">start</span>';
+
+  // Change set timer inactivity opacity
+  setTimerElem.style.opacity = setTimerFadeAmount;
 
   // Reset team scores
   teamOneScore = 0;
