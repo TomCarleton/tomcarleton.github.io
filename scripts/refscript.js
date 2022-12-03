@@ -977,6 +977,9 @@ function endTimeout(){
   // Manage timers
   timeoutPaused = true;
 
+  // Change set timer inactivity opacity
+  setTimerElem.style.opacity = setTimerFadeAmount;
+
   // Hide relevent elements
   timeoutTimerContainer.style.display = "none";
   endTimeoutButton.style.display = "none";
