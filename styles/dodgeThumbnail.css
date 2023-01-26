@@ -1,0 +1,264 @@
+body {
+  background-color: #FDC62E;
+  font-family: Unbounded, Arial;
+  overflow-x: hidden;
+}
+
+h1 {
+  width: 100vw;
+  text-align: center;
+  font-size: min(max(2.5vw, 30px), 80px);
+  color: #1A1A1A;
+}
+
+.form-page {
+  width: 90vw;
+  padding: 0 5vw;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 6px;
+}
+
+.form-column {
+  width: 42vw;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.select-box {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  background-color: white;
+  border: solid 2px #1A1A1A;
+  border-radius: 10px;
+  box-shadow: 12px 12px 0 black;
+}
+
+  .select-box.team {
+    height: 300px;
+  }
+
+  .select-box.comp {
+    height: 150px;
+  }
+
+  .select-box.temp {
+    height: 150px;
+  }
+
+  .select-box.prev {
+    height: 350px;
+  }
+
+.comp-select-box {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 150px;
+  background-color: white;
+  border: solid 2px #1A1A1A;
+  border-radius: 10px;
+  box-shadow: 12px 12px 0 black;
+}
+
+.team-select-header {
+  width: 100%;
+  text-align: center;
+  font-size: max(1.2vw, 16px);
+  margin: 8px 0;
+}
+
+.team-select-row {
+  display: flex;
+  align-items: center;
+  height: 200px;
+  padding: 15px 5%;
+  gap: 5%;
+}
+
+.team-select-logo {
+  aspect-ratio: 1 / 1;
+  height: 100%;
+  outline: solid 2px #1A1A1A;
+  border-radius: 5px;
+}
+
+.select-container.team {
+  flex: 1;
+  height: 80%;
+  padding: 20px 0;
+  display: flex;
+  align-items: center;
+}
+
+.select-container.comp {
+  flex: 3;
+  height: 80%;
+  padding: 20px 0;
+  display: flex;
+  align-items: center;
+}
+
+.select-container.round {
+  flex: 1;
+  height: 80%;
+  padding: 20px 0;
+  display: flex;
+  align-items: center;
+}
+
+.select-dropdown {
+  height: 100%;
+  width: 100%;
+  padding: 0 10px;
+  outline: solid 1px #1A1A1A;
+  border-radius: 5px;
+  font-family: Unbounded, Arial;
+  font-size: max(1vw, 16px);
+  background-color: #FCEDC4;
+}
+
+  .select-dropdown::-webkit-scrollbar {
+    width: 10px;
+  }
+
+  .select-dropdown::-webkit-scrollbar-track {
+    background: #E0D2AF;
+  }
+
+  .select-dropdown::-webkit-scrollbar-thumb {
+    background: #D1BA8A;
+    border-radius: 5px;
+  }
+
+  .select-dropdown::-webkit-scrollbar-thumb:hover {
+    background: #A08E6B;
+  }
+
+option:checked {
+  background-image: linear-gradient(90deg, #7CEABC, #FCEDC4);
+  background-color: #7CEABC;
+  font-weight: 600;
+}
+
+.canvas-container {
+  width: 92%;
+  height: 50%;
+  gap: 2%;
+  padding: 50px 3%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+canvas.thumb {
+  outline: solid 1px #1A1A1A;
+  height: 216px;
+  width: 384px;
+}
+
+.thumbnail-container {
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  display: none;
+  top: 0;
+  left: 0;
+}
+
+canvas.thumbnail {
+  display: none;
+  height: 1920px;
+  width: 1080px;
+}
+
+.button-container {
+  width: 30%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+}
+
+.btn {
+  color: #1A1A1A;
+  font-family: Unbounded, Arial;
+  font-size: 16px;
+  border: solid 2px #1A1A1A;
+  border-radius: 5px;
+  padding: 10px 0;
+  box-shadow: 3px 3px 0 #1A1A1A;
+  cursor: pointer;
+  background-color: #F4724E;
+  text-decoration: none;
+  width: 200px;
+
+  transition: all 0.3s cubic-bezier(.14,.71,.5,.85);
+}
+
+  .btn.download:hover {
+    transform: translate(3px, 3px);
+    box-shadow: 0 0 0 #1A1A1A;
+    background-color: #DB6646;
+  }
+
+.btn.create {
+  background-color: #7CEABC;
+  padding: 10px 0s;
+}
+
+.btn.create:hover {
+  transform: translate(3px, 3px);
+  box-shadow: 0 0 0 #1A1A1A;
+  background-color: #73CEA5;
+}
+
+  @media (max-width: 1919px) {
+
+    .canvas-container {
+      flex-direction: column;
+      gap: 15px;
+    }
+
+    .button-container {
+      flex-direction: row;
+      width: 100%;
+      gap: 15px;
+    }
+
+  }
+
+  @media (max-width: 700px) {
+
+    .form-page {
+      grid-template-columns: 1fr;
+      gap: 30px;
+    }
+  
+    .form-column {
+      width: 85vw;
+      gap: 30px;
+    }
+
+    .team-select-logo {
+      aspect-ratio: 1 / 1;
+      height: 60%;
+      outline: solid 2px #1A1A1A;
+      border-radius: 5px;
+    }
+  
+  }
+
+  @media (max-width: 550px) {
+    .team-select-logo {
+      display: none;
+    }
+
+    canvas.thumb {
+      aspect-ratio: 16 / 9;
+      width: 95%;
+    }
+  }

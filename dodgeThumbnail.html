@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DodgeThumbnail</title>
+
+  <link rel="stylesheet" href="styles/dodgeThumbnail.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@200;400;600;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;800&display=swap" rel="stylesheet">
+</head>
+
+<body>
+  <h1>Dodgeball Thumbnail Maker</h1>
+  <div class="form-page">
+    <div class="form-column">
+      <div class="select-box team">
+        <div class="team-select-header">Select Team 1</div>
+        <div class="team-select-row">
+          <img id="team1Img" class="team-select-logo">
+          <div class="select-container team">
+            <select id="selectTeam1" class="select-dropdown team" size="5" onchange="updateTeamLogo(this)"></select>
+          </div>
+        </div>
+      </div>
+      <div class="select-box team">
+        <div class="team-select-header">Select Team 2</div>
+        <div class="team-select-row">
+          <img id="team2Img" class="team-select-logo">
+          <div class="select-container team">
+            <select id="selectTeam2" class="select-dropdown team" size="5" onchange="updateTeamLogo(this)"></select>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="form-column">
+      <div class="select-box comp">
+        <div class="team-select-header">Select Competition</div>
+        <div class="team-select-row">
+          <div class="select-container comp">
+            <select id="selectComp" class="select-dropdown comp">
+              <option value="0" label="" selected></option>
+            </select>
+          </div>
+          <div class="select-container round">
+            <select id="selectRound" class="select-dropdown round">
+              <option value="0" label="" selected></option>
+            </select>
+          </div>
+        </div>
+      </div>
+      <div class="select-box temp">
+        <div class="team-select-header">Select Template</div>
+      </div>
+
+      <div class="select-box prev">
+        <div class="team-select-header">Preview Thumbnail</div>
+        <div class="canvas-container">
+          <canvas class="thumb" id="thumb" width="384" height="216">
+
+          </canvas>
+          <div class="button-container">
+            <button id="download" class="btn download" onclick="updateImg()">Update Preview</button>
+            <button id="download" class="btn create" onclick="createImg()">Create</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <div id="thumbnail-container" class="thumbnail-container">
+    <canvas id="thumbnail" width="1920" height="1080"></canvas>
+  </div>
+  
+  <script src="scripts/drawCanvas.js"></script>
+  <script src="scripts/teamData.js"></script>
+</body>
+</html>
