@@ -12,6 +12,11 @@ function createImg() {
   drawCanvas1(canvas);
 }
 
+function hideImg() {
+  const canvas = document.getElementById('thumbnail');
+  canvas.parentElement.style.display = "none";
+}
+
 function updateTeamLogo(element) {
   const filePath = "DodgeResources/" + element.value + ".png";
   var imgBox = "";
@@ -69,7 +74,6 @@ function drawCanvas1(canvas) {
   var h = canvas.height;
   var w = canvas.width;
   var txt = canvas.width / 28;
-  console.log(txt);
 
   // Clear canvas
   cv.clearRect(0, 0, w, h);
@@ -145,6 +149,4 @@ function drawCanvas1(canvas) {
   cv.font = txt * 1.2 + "px Montserrat";
   cv.fillStyle = "#1A1A1A";
   cv.fillText("VS", 0.5 * w, 0.467 * h, 0.1 * w);
-
-  console.log("Draw complete");
 }
