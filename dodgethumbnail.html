@@ -22,7 +22,7 @@
         <div class="team-select-row">
           <img id="team1Img" class="team-select-logo">
           <div class="select-container team">
-            <select id="selectTeam1" class="select-dropdown team" size="5" onchange="updateTeamLogo(this)"></select>
+            <select id="selectTeam1" class="select-dropdown team" size="5" onchange="updateTeamLogo(this); updateImg()"></select>
           </div>
         </div>
       </div>
@@ -31,7 +31,7 @@
         <div class="team-select-row">
           <img id="team2Img" class="team-select-logo">
           <div class="select-container team">
-            <select id="selectTeam2" class="select-dropdown team" size="5" onchange="updateTeamLogo(this)"></select>
+            <select id="selectTeam2" class="select-dropdown team" size="5" onchange="updateTeamLogo(this); updateImg()"></select>
           </div>
         </div>
       </div>
@@ -41,12 +41,12 @@
         <div class="team-select-header">Select Competition</div>
         <div class="team-select-row">
           <div class="select-container comp">
-            <select id="selectComp" class="select-dropdown comp">
+            <select id="selectComp" class="select-dropdown comp" onchange="updateImg()">
               <option value="0" label="" selected></option>
             </select>
           </div>
           <div class="select-container round">
-            <select id="selectRound" class="select-dropdown round">
+            <select id="selectRound" class="select-dropdown round" onchange="updateImg()">
               <option value="0" label="" selected></option>
             </select>
           </div>
@@ -63,8 +63,9 @@
 
           </canvas>
           <div class="button-container">
-            <button id="download" class="btn download" onclick="updateImg()">Update Preview</button>
-            <button id="download" class="btn create" onclick="createImg()">Create</button>
+            <button id="download" class="btn update" onclick="updateImg()">Refresh Preview</button>
+            <button id="download" class="btn display" onclick="createImg()">Display</button>
+            <button id="download" class="btn download" onclick="downloadImg()">Download</button>
           </div>
         </div>
       </div>

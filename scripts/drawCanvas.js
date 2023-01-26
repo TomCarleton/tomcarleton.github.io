@@ -12,6 +12,32 @@ function createImg() {
   drawCanvas1(canvas);
 }
 
+function downloadImg() {
+  // Render image
+  const canvas = document.getElementById('thumbnail');
+  drawCanvas1(canvas);
+
+  // Create filename
+  var team1 = getTeamInfo(1);
+  if (team1 == 0)
+    team1 = "[unknown]";
+  else
+    team1 = team1.displayName;
+  var team2 = getTeamInfo(2);
+  if (team2 == 0)
+    team2 = "[unknown]";
+  else
+    team2 = team2.displayName;
+  
+  const filename = team1 + " vs " + team2;
+
+  // Prepare downloadable link
+  var link = document.createElement('a');
+  link.download = filename + ".png";
+  link.href = canvas.toDataURL()
+  link.click();
+}
+
 function hideImg() {
   const canvas = document.getElementById('thumbnail');
   canvas.parentElement.style.display = "none";
@@ -31,12 +57,18 @@ function updateTeamLogo(element) {
 function getTeamInfo(team) {
   if (team == 1){
     const selectTeam1 = document.getElementById("selectTeam1");
+    if (selectTeam1.options[selectTeam1.selectedIndex] == null){
+      return 0;
+    }
     const teamLabel = selectTeam1.options[selectTeam1.selectedIndex].label;
     return teamList.find(t => {
       return t.displayName == teamLabel
     })
   } else {
     const selectTeam2 = document.getElementById("selectTeam2");
+    if (selectTeam2.options[selectTeam2.selectedIndex] == null){
+      return 0;
+    }
     const teamLabel = selectTeam2.options[selectTeam2.selectedIndex].label;
     return teamList.find(t => {
       return t.displayName == teamLabel
@@ -92,17 +124,21 @@ function drawCanvas1(canvas) {
   cv.fillRect(0.06 * w, 0.1 * h, 0.88 * w, 0.8 * h);
 
   // Draw team logo gradient backgrounds
-  var grad1 = cv.createLinearGradient(0, 0, 0, h);
-  grad1.addColorStop(0.1, team1Info.color1);
-  grad1.addColorStop(1, team1Info.color2);
-  var grad2 = cv.createLinearGradient(0, 0, 0, h);
-  grad2.addColorStop(0.1, team2Info.color1);
-  grad2.addColorStop(1, team2Info.color2);
   cv.shadowColor = "rgba(0, 0, 0, 0.4)";
-  cv.fillStyle = grad1;
-  cv.fillRect(0.069 * w, 0.115 * h, 0.426 * w, 0.65 * h);
-  cv.fillStyle = grad2;
-  cv.fillRect(0.505 * w, 0.115 * h, 0.426 * w, 0.65 * h);
+  if (team1Info != 0){
+    var grad1 = cv.createLinearGradient(0, 0, 0, h);
+    grad1.addColorStop(0.1, team1Info.color1);
+    grad1.addColorStop(1, team1Info.color2);
+    cv.fillStyle = grad1;
+    cv.fillRect(0.069 * w, 0.115 * h, 0.426 * w, 0.65 * h);
+  }
+  if (team2Info != 0){
+    var grad2 = cv.createLinearGradient(0, 0, 0, h);
+    grad2.addColorStop(0.1, team2Info.color1);
+    grad2.addColorStop(1, team2Info.color2);
+    cv.fillStyle = grad2;
+    cv.fillRect(0.505 * w, 0.115 * h, 0.426 * w, 0.65 * h);
+  }
 
   // Draw team logo gradient vignettes
   grad1 = cv.createRadialGradient(0.28 * w, 0.4 * h, w * 0.1, 0.28 * w, 0.4 * h, 0.7 * w);
@@ -129,8 +165,12 @@ function drawCanvas1(canvas) {
   cv.fillStyle = "white";
   cv.textAlign = "center";
   cv.font = txt + "px Montserrat";
-  cv.fillText(team1Info.displayName.toUpperCase(), 0.28 * w, 0.68 * h, 0.35 * w);
-  cv.fillText(team2Info.displayName.toUpperCase(), 0.715 * w, 0.68 * h, 0.35 * w);
+  if (team1Info != 0){
+    cv.fillText(team1Info.displayName.toUpperCase(), 0.28 * w, 0.68 * h, 0.35 * w);
+  }
+  if (team2Info != 0){
+    cv.fillText(team2Info.displayName.toUpperCase(), 0.715 * w, 0.68 * h, 0.35 * w);
+  }
 
   // Draw league & round text
   cv.shadowColor = "rgba(0, 0, 0, 0.2)";

@@ -205,22 +205,33 @@ canvas.thumbnail {
   transition: all 0.3s cubic-bezier(.14,.71,.5,.85);
 }
 
-  .btn.download:hover {
+  .btn.update:hover {
     transform: translate(3px, 3px);
     box-shadow: 0 0 0 #1A1A1A;
     background-color: #DB6646;
   }
 
-.btn.create {
+.btn.display {
   background-color: #7CEABC;
   padding: 10px 0s;
 }
 
-.btn.create:hover {
-  transform: translate(3px, 3px);
-  box-shadow: 0 0 0 #1A1A1A;
-  background-color: #73CEA5;
+  .btn.display:hover {
+    transform: translate(3px, 3px);
+    box-shadow: 0 0 0 #1A1A1A;
+    background-color: #73CEA5;
+  }
+
+.btn.download {
+  background-color: #A8C7F7;
+  padding: 10px 0s;
 }
+
+  .btn.download:hover {
+    transform: translate(3px, 3px);
+    box-shadow: 0 0 0 #1A1A1A;
+    background-color: #9AB7E0;
+  }
 
   @media (max-width: 1919px) {
 
