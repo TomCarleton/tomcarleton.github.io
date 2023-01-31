@@ -222,7 +222,7 @@ function drawCanvas(canvas, template) {
       // Draw team logos
       cv.shadowColor = "rgba(255, 255, 255, 0.4)";
       cv.shadowBlur = 8;
-      cv.drawImage(img1, 0.18 * w, 0.18 * h + yShift / 3, 0.2 * w, 0.2 * w);
+      cv.drawImage(img1, 0.175 * w, 0.18 * h + yShift / 3, 0.2 * w, 0.2 * w);
       cv.drawImage(img2, 0.62 * w, 0.18 * h + yShift / 3, 0.2 * w, 0.2 * w);
 
       // Draw team text
@@ -352,7 +352,7 @@ function drawCanvas(canvas, template) {
       cv.shadowColor = "rgba(255, 255, 255, 0.4)";
       cv.shadowBlur = 8;
       cv.drawImage(img1, 0.12 * w, 0.12 * h + yShift, 0.24 * w, 0.24 * w);
-      cv.drawImage(img2, 0.64 * w, 0.12 * h + yShift, 0.24 * w, 0.24 * w);
+      cv.drawImage(img2, 0.63 * w, 0.12 * h + yShift, 0.24 * w, 0.24 * w);
 
       // Draw team text
       cv.shadowColor = "black";
@@ -372,10 +372,10 @@ function drawCanvas(canvas, template) {
       if (team2Info != 0){
         const textLines = lineCount(team2Info.displayName);
         if (textLines[0] == 1){
-          cv.fillText(team2Info.displayName.toUpperCase(), 0.734 * w - xShift, 0.69 * h + yShift, 0.35 * w);
+          cv.fillText(team2Info.displayName.toUpperCase(), 0.754 * w - xShift, 0.69 * h + yShift, 0.35 * w);
         } else {
-          cv.fillText(textLines[0].toUpperCase(), 0.734 * w - xShift, 0.66 * h + yShift, 0.35 * w);
-          cv.fillText(textLines[1].toUpperCase(), 0.734 * w - xShift, 0.72 * h + yShift, 0.35 * w);
+          cv.fillText(textLines[0].toUpperCase(), 0.754 * w - xShift, 0.66 * h + yShift, 0.35 * w);
+          cv.fillText(textLines[1].toUpperCase(), 0.754 * w - xShift, 0.72 * h + yShift, 0.35 * w);
         }
       }
 
