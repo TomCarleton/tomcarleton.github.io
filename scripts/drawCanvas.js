@@ -12,7 +12,6 @@ if (templateNum == null) {
   const button = document.getElementById(buttonId);
   button.classList.add("active");
 }
-  
 
 function updateImg() {
   const canvas = document.getElementById('thumb');
@@ -164,7 +163,6 @@ function drawCanvas(canvas, template) {
 
       // Calculate y shift if no competition info
       var yShift = 0;
-      console.log(compInfo);
       if (compInfo == ""){
         yShift = 0.12 * h;
       }
@@ -294,7 +292,6 @@ function drawCanvas(canvas, template) {
       // Calculate x/y shift if no competition info
       var yShift = 0;
       var xShift = 0;
-      console.log(compInfo);
       if (compInfo == ""){
         yShift = 0.06 * h;
         xShift = 0.005 * w;
@@ -404,7 +401,7 @@ function drawCanvas(canvas, template) {
       cv.shadowBlur = 2;
       cv.fillStyle = "#1A1A1A";
       cv.font = txt * 0.8 + "px Montserrat";
-      cv.fillText(compInfo.toUpperCase(), 0.5 * w, 0.892 * h, 0.8 * w);
+      cv.fillText(compInfo.toUpperCase(), 0.5 * w, 0.892 * h, 0.65 * w);
 
       // Draw vs text
       cv.shadowColor = "rgba(0, 0, 0, 0.4)";
@@ -419,7 +416,7 @@ function drawCanvas(canvas, template) {
 
       //Draw white border
       cv.strokeStyle = "white";
-      cv.lineWidth = 0.02 * w;
+      cv.lineWidth = 0.03 * w;
       cv.strokeRect(0, 0, w, h);
 
       break;
