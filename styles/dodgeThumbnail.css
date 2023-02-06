@@ -366,4 +366,12 @@ canvas.thumbnail {
     .button-container {
       flex-direction: column;
     }
+
+    .country-select-container {
+      gap: 8px;
+    }
+
+    .country-select {
+      font-size: 3vw;
+    }
   }

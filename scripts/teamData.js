@@ -269,6 +269,7 @@ function dropdownPopulate(){
   });
   
   const selectRound = document.getElementById("selectRound");
+  selectRound.innerHTML = "";
   for (let i = 0; i < 10; i++) {
     const selectTemplate = document.createElement("option");
     selectTemplate.label = "Rnd " + (i + 1);
