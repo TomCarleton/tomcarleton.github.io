@@ -1,55 +1,39 @@
-.canvas-container-home{
-  height: 100vh;
-  width: 100vw;
-}
-
-.home{
-  height: 100vh;
-  width: auto;
+body {
+  background-color: #282C34;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  position: relative;
+  height: 100vh;
 }
 
-.h-container-home{
-  position: absolute;
+.title-text {
+  margin: 10px 0;
+  cursor: default;
 }
 
-.button-container{
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  position: relative;
-}
-
-.home-page-button{
-  font-family: Kumbh Sans, Arial;
-  font-size: 16px;
-  font-weight: 600;
-  text-shadow: 0 0 5px rgba(0, 0, 0, 0.4);
-
-  color: rgb(255, 255, 255);
-  background-color: transparent;
-  box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.103);
-  border: solid 1px rgba(214, 214, 214, 0.342);
-  border-radius: 40px;
-
-  height: 40px;
-  width: 300px;
+.link {
   cursor: pointer;
-  margin: 8px 0;
-
-  transition: all 0.25s ease-out;
+  text-align: center;
+  padding: 5px 25px;
 }
 
-.home-page-button:hover{
-  background-color: white;
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.144);
-  mix-blend-mode: hard-light;
-  color: rgb(31, 139, 189);
-  font-weight: 900;
-  text-shadow: none;
+.link.purple:hover {
+  background-color: #C678DD;
+  color: #282C34;
+}
+
+.link.red:hover {
+  background-color: #E06C75;
+  color: #282C34;
+}
+
+@media (orientation: portrait) {
+  .title-text {
+    font-size: 9vw;
+  }
+  
+  .link {
+    font-size: 6vw;
+  }
 }
