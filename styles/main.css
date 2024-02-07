@@ -91,24 +91,32 @@ nav {
         box-shadow: 0 0 30px rgba(1,1,1,0.35);
     }
 
+.profile-container {
+    width: 60%;
+}
+
 .profile {
     display: flex;
-    flex-direction: row;
-    flex: 1;
     align-items: center;
+    justify-content: center;
+    border-bottom: solid 5px #61AFEF;
+}
+
+.profile-photo-container {
+    flex: 1;
+    display: flex;
     justify-content: center;
 }
 
 .profile-photo {
-    width: 300px;
-    border-radius: 50%;
+    max-height: 250px;
 }
 
 .profile-text {
-    padding: 20px;
+    padding: 0 20px;
     display: flex;
     flex-direction: column;
-    flex: 1;
+    flex: 3;
     align-items: center;
     justify-content: center;
     gap: 30px;
@@ -118,6 +126,7 @@ nav {
     font-size: 70px;
     text-align: center;
     margin: 0;
+    line-height: 70px;
 }
 
 .profile-job {
@@ -127,17 +136,26 @@ nav {
 }
 
 @media (orientation: portrait) {
+    .profile-container {
+        width: 80%;
+    }
+
     .profile {
         flex-direction: column;
     }
 
     .profile-photo {
-        width: 250px;
-        margin-top: 10px;
+        display: none;
+    }
+
+    .profile-text {
+        gap: 10px;
+        padding: 20px;
     }
 
     .profile-name {
         font-size: 50px;
+        line-height: 50px;
     }
 
     .profile-job {
