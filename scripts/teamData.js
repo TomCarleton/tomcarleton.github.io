@@ -120,9 +120,9 @@ teamList.push(newTeamData("London Storm 2", "londStorm", "black", "white", "eng"
 teamList.push(newTeamData("Wessex Wolves", "wesWolves", "black", "#FFCC00", "eng"));
 
 // BD English Men's League 1
-teamList.push(newTeamData("Norwich Nighthawks", "norNighthawks", "black", "white", "eng"));
+teamList.push(newTeamData("Norwich Nighthawks", "norNighthawks", "grey", "black", "eng"));
 teamList.push(newTeamData("Manchester Worker Bees", "mancBees", "yellow", "#7F7F00", "eng"));
-teamList.push(newTeamData("MK Cyclones", "mkCyclones", "#752F79", "#B86BC4", "eng"));
+teamList.push(newTeamData("MK Cyclones", "mkCyclones", "#752F79", "#E53498", "eng"));
 teamList.push(newTeamData("Leamington Spartans 2", "leamSpartans", "#A11E23", "#E0362A", "eng"));
 teamList.push(newTeamData("Bedford Mighty Eagles", "bedEagles", "#B9A668", "#231F20", "eng"));
 teamList.push(newTeamData("Bedford Rangers 2", "bedRangers", "teal", "black", "eng"));
@@ -132,7 +132,7 @@ teamList.push(newTeamData("Nottingham Sheriffs 2", "notSheriffs", "green", "blac
 teamList.push(newTeamData("Virtue Empire", "virEmpire", "#FC650C", "#314C83", "eng"));
 
 // BD English Men's League 2
-teamList.push(newTeamData("Rhondda Dragons", "rhoDragons", "black", "red", "eng"));
+teamList.push(newTeamData("Rhondda Dragons", "rhoDragons", "#2e0000", "#cc0000", "eng"));
 teamList.push(newTeamData("Coventry Silverbacks 2", "covSilverbacks", "grey", "black", "eng"));
 teamList.push(newTeamData("London Storm 3", "londStorm", "black", "white", "eng"));
 teamList.push(newTeamData("Leicester Mustangs", "leiMustangs", "#24398A", "white", "eng"));
@@ -140,14 +140,14 @@ teamList.push(newTeamData("Stafford Raptors", "stafRaptors", "black", "red", "en
 teamList.push(newTeamData("Carmarthen Wizards", "carWizards", "white", "#2E0051", "eng"));
 teamList.push(newTeamData("Derby Phantoms 2", "derPhantoms", "purple", "black", "eng"));
 teamList.push(newTeamData("Wessex Wolves 2", "wesWolves", "black", "#FFCC00", "eng"));
-teamList.push(newTeamData("MK Cyclones 2", "mkCyclones", "#752F79", "#B86BC4", "eng"));
+teamList.push(newTeamData("MK Cyclones 2", "mkCyclones", "#752F79", "#E53498", "eng"));
 teamList.push(newTeamData("Manchester Soldier Bees", "mancBees", "yellow", "#7F7F00", "eng"));
 
 // BD English Men's League 3
 teamList.push(newTeamData("Sheffield Bovines", "shefBovines", "black", "white", "eng"));
 teamList.push(newTeamData("London Saints", "lonSaints", "white", "#880D17", "eng"));
 teamList.push(newTeamData("Canterbury Crocodiles", "cantCrocodiles", "#0E6538", "#548F4B", "eng"));
-teamList.push(newTeamData("Norwich Nighthawks 2", "norNighthawks", "black", "white", "eng"));
+teamList.push(newTeamData("Norwich Nighthawks 2", "norNighthawks", "grey", "black", "eng"));
 teamList.push(newTeamData("Hartlepool Mavericks", "hartMavericks", "#1690C1", "white", "eng"));
 teamList.push(newTeamData("Stafford Raptors 2", "stafRaptors", "black", "red", "eng"));
 teamList.push(newTeamData("Virtue Slayers", "virEmpire", "#FC650C", "#314C83", "eng"));
