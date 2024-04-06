@@ -105,117 +105,133 @@ compList.push(newCompData("NI Mixed League", "nIMixedLeague", "ni"));
 // Create blank team list
 var teamList = [];
 
-// English Teams
-
-// BD English Men's Superleague
-teamList.push(newTeamData("Leamington Spartans", "leamSpartans", "#A11E23", "#E0362A", "eng"));
-teamList.push(newTeamData("Lutterworth Meteors", "lutMeteors", "red", "black", "eng"));
-teamList.push(newTeamData("Manchester Killer Bees", "mancBees", "yellow", "#7F7F00", "eng"));
-teamList.push(newTeamData("London Storm", "londStorm", "black", "white", "eng"));
-teamList.push(newTeamData("Bedford Rangers", "bedRangers", "teal", "black", "eng"));
-teamList.push(newTeamData("Nottingham Sheriffs", "notSheriffs", "green", "black", "eng"));
-teamList.push(newTeamData("Derby Phantoms", "derPhantoms", "purple", "black", "eng"));
-teamList.push(newTeamData("Coventry Silverbacks", "covSilverbacks", "grey", "black", "eng"));
-teamList.push(newTeamData("London Storm 2", "londStorm", "black", "white", "eng"));
-teamList.push(newTeamData("Wessex Wolves", "wesWolves", "black", "#FFCC00", "eng"));
-
-// BD English Men's League 1
-teamList.push(newTeamData("Norwich Nighthawks", "norNighthawks", "grey", "black", "eng"));
-teamList.push(newTeamData("Manchester Worker Bees", "mancBees", "yellow", "#7F7F00", "eng"));
-teamList.push(newTeamData("MK Cyclones", "mkCyclones", "#752F79", "#E53498", "eng"));
-teamList.push(newTeamData("Leamington Spartans 2", "leamSpartans", "#A11E23", "#E0362A", "eng"));
-teamList.push(newTeamData("Bedford Mighty Eagles", "bedEagles", "#B9A668", "#231F20", "eng"));
-teamList.push(newTeamData("Bedford Rangers 2", "bedRangers", "teal", "black", "eng"));
-teamList.push(newTeamData("Leeds Owls", "leedsOwls", "#333EE8", "#44BA7E", "eng"));
-teamList.push(newTeamData("Thunderdodge", "thunDodge", "black", "#E1860B", "eng"));
-teamList.push(newTeamData("Nottingham Sheriffs 2", "notSheriffs", "green", "black", "eng"));
-teamList.push(newTeamData("Virtue Empire", "virEmpire", "#FC650C", "#314C83", "eng"));
-
-// BD English Men's League 2
-teamList.push(newTeamData("Rhondda Dragons", "rhoDragons", "#2e0000", "#cc0000", "eng"));
-teamList.push(newTeamData("Coventry Silverbacks 2", "covSilverbacks", "grey", "black", "eng"));
-teamList.push(newTeamData("London Storm 3", "londStorm", "black", "white", "eng"));
-teamList.push(newTeamData("Leicester Mustangs", "leiMustangs", "#24398A", "white", "eng"));
-teamList.push(newTeamData("Stafford Raptors", "stafRaptors", "black", "red", "eng"));
-teamList.push(newTeamData("Carmarthen Wizards", "carWizards", "white", "#2E0051", "eng"));
-teamList.push(newTeamData("Derby Phantoms 2", "derPhantoms", "purple", "black", "eng"));
-teamList.push(newTeamData("Wessex Wolves 2", "wesWolves", "black", "#FFCC00", "eng"));
-teamList.push(newTeamData("MK Cyclones 2", "mkCyclones", "#752F79", "#E53498", "eng"));
-teamList.push(newTeamData("Manchester Soldier Bees", "mancBees", "yellow", "#7F7F00", "eng"));
-
-// BD English Men's League 3
-teamList.push(newTeamData("Sheffield Bovines", "shefBovines", "black", "white", "eng"));
-teamList.push(newTeamData("London Saints", "lonSaints", "white", "#880D17", "eng"));
-teamList.push(newTeamData("Canterbury Crocodiles", "cantCrocodiles", "#0E6538", "#548F4B", "eng"));
-teamList.push(newTeamData("Norwich Nighthawks 2", "norNighthawks", "grey", "black", "eng"));
-teamList.push(newTeamData("Hartlepool Mavericks", "hartMavericks", "#1690C1", "white", "eng"));
-teamList.push(newTeamData("Stafford Raptors 2", "stafRaptors", "black", "red", "eng"));
-teamList.push(newTeamData("Virtue Slayers", "virEmpire", "#FC650C", "#314C83", "eng"));
-teamList.push(newTeamData("Burton Panthers", "burtPanthers", "#3795D1", "black", "eng"));
-
-// BD English Men's League 4
-teamList.push(newTeamData("Essex Swords", "essSwords", "white", "red", "eng"));
-teamList.push(newTeamData("Leamington Spartans 3", "leamSpartans", "#A11E23", "#E0362A", "eng"));
-teamList.push(newTeamData("Brayford Beasts", "brayBeasts", "black", "#731527", "eng"));
-teamList.push(newTeamData("Chippenham Chargers", "chipChargers", "red", "black", "eng"));
-teamList.push(newTeamData("Leicester Mustangs 2", "leiMustangs", "#24398A", "white", "eng"));
-teamList.push(newTeamData("Coventry Silverbacks 3", "covSilverbacks", "grey", "black", "eng"));
-teamList.push(newTeamData("Leicester Mustangs 3", "leiMustangs", "#24398A", "white", "eng"));
-teamList.push(newTeamData("Leeds Barn Owls", "leedsOwls", "#333EE8", "#44BA7E", "eng"));
-
-// BD English Women's Superleague
-teamList.push(newTeamData("East Anglia Valkyries", "eaVikings", "black", "#27D8FF", "eng"));
-teamList.push(newTeamData("Manchester Queen Bees", "mancBees", "yellow", "#7F7F00", "eng"));
-
-// BD English Women's League 1
-teamList.push(newTeamData("Leicester White Tigers", "leiTigers", "white", "black", "eng"));
-teamList.push(newTeamData("Manchester Honey Bees", "mancBees", "yellow", "#7F7F00", "eng"));
-
-// BD English Mixed League North
-teamList.push(newTeamData("Manchester Killer Queens", "mancBees", "yellow", "#7F7F00", "eng"));
-teamList.push(newTeamData("Manchester Honey Workers", "mancBees", "yellow", "#7F7F00", "eng"));
-teamList.push(newTeamData("Lincoln Royals", "linRoyals", "#1E1B36", "yellow", "eng"));
-teamList.push(newTeamData("M.U.D.S.", "muds", "#7A288C", "white", "eng"));
-teamList.push(newTeamData("Warwick Warriors", "warWarriors", "red", "white", "eng"));
-
-// BD English Mixed League South
-teamList.push(newTeamData("Wessex Wolves 3", "wesWolves", "black", "#FFCC00", "eng"));
-teamList.push(newTeamData("PB Dodgeball", "pbDodge", "black", "#8104F8", "eng"));
-
-// NI Teams
-
-// BD NI Men's Superleague
+teamList.push(newTeamData("Ballyhackamore Amazons", "balBarbarians", "#5B008C", "black", "ni"));
 teamList.push(newTeamData("Ballyhackamore Barbarians", "balBarbarians", "#5B008C", "black", "ni"));
 teamList.push(newTeamData("Ballyhackamore Vikings", "balBarbarians", "#5B008C", "black", "ni"));
-teamList.push(newTeamData("Crossfire Cannons", "croCannons", "red", "white", "ni"));
-teamList.push(newTeamData("Queen's Aces", "queAces", "#0248AA", "black", "ni"));
-teamList.push(newTeamData("Kings of Queen's", "queAces", "#0248AA", "black", "ni"));
-teamList.push(newTeamData("Kapow", "kapow", "red", "black", "ni"));
 
-// BD NI Women's Superleague
+teamList.push(newTeamData("Bedford Mighty Eagles", "bedEagles", "#B9A668", "#231F20", "eng"));
+
+teamList.push(newTeamData("Bedford Rangers", "bedRangers", "teal", "black", "eng"));
+teamList.push(newTeamData("Bedford Rangers 2", "bedRangers", "teal", "black", "eng"));
+
+teamList.push(newTeamData("Berkshire Royals", "berRoyals", "#4d4dff", "yellow", "eng"));
+
 teamList.push(newTeamData("Black Widows", "blaWidows", "black", "red", "ni"));
-teamList.push(newTeamData("Ballyhackamore Amazons", "balBarbarians", "#5B008C", "black", "ni"));
-teamList.push(newTeamData("Crossfire Cheetahs", "croCannons", "red", "white", "ni"));
-teamList.push(newTeamData("Queens of Queen's", "queAces", "#0248AA", "black", "ni"));
-teamList.push(newTeamData("Queens of Hearts", "queAces", "#0248AA", "black", "ni"));
 
-// BD NI Mixed League
-teamList.push(newTeamData("Crossfire", "croCannons", "red", "white", "ni"));
-teamList.push(newTeamData("Queen's Quasers", "queAces", "#0248AA", "black", "ni"));
-teamList.push(newTeamData("Queen's Shooting Stars", "queAces", "#0248AA", "black", "ni"));
-teamList.push(newTeamData("Queen's Comets", "queComets", "black", "#1C6031", "ni"));
+teamList.push(newTeamData("Brayford Beasts", "brayBeasts", "black", "#731527", "eng"));
 
-// Scottish Teams
-
-// BD Scottish Superleague
 teamList.push(newTeamData("Buchan Sharks", "bucSharks", "#018184", "white", "sco"));
 teamList.push(newTeamData("Buchan Stingrays", "bucSharks", "#018184", "white", "sco"));
+
+teamList.push(newTeamData("Burton Panthers", "burtPanthers", "#3795D1", "black", "eng"));
+
+teamList.push(newTeamData("Canterbury Crocodiles", "cantCrocodiles", "#0E6538", "#548F4B", "eng"));
+
+teamList.push(newTeamData("Carmarthen Wizards", "carWizards", "white", "#2E0051", "eng"));
+
+teamList.push(newTeamData("Chippenham Chargers", "chipChargers", "red", "black", "eng"));
+
+teamList.push(newTeamData("Coventry Silverbacks", "covSilverbacks", "grey", "black", "eng"));
+teamList.push(newTeamData("Coventry Silverbacks 2", "covSilverbacks", "grey", "black", "eng"));
+teamList.push(newTeamData("Coventry Silverbacks 3", "covSilverbacks", "grey", "black", "eng"));
+
+teamList.push(newTeamData("Crossfire", "croCannons", "red", "white", "ni"));
+teamList.push(newTeamData("Crossfire Cannons", "croCannons", "red", "white", "ni"));
+teamList.push(newTeamData("Crossfire Cheetahs", "croCannons", "red", "white", "ni"));
+
+teamList.push(newTeamData("Derby Phantoms", "derPhantoms", "purple", "black", "eng"));
+teamList.push(newTeamData("Derby Phantoms 2", "derPhantoms", "purple", "black", "eng"));
+teamList.push(newTeamData("Derby Phantoms 3", "derPhantoms", "purple", "black", "eng"));
+
+teamList.push(newTeamData("East Anglia Valkyries", "eaVikings", "black", "#27D8FF", "eng"));
+teamList.push(newTeamData("East Anglia Vikings", "eaVikings", "black", "#27D8FF", "eng"));
+
 teamList.push(newTeamData("Edinburgh Dodgeball", "ediFireworks", "black", "red", "sco"));
-teamList.push(newTeamData("Granite City Guerrillas", "graGuerrillas", "#001946", "black", "sco"));
+
+teamList.push(newTeamData("Essex Swords", "essSwords", "white", "red", "eng"));
+
 teamList.push(newTeamData("GCG Insurgents", "graGuerrillas", "#001946", "black", "sco"));
 teamList.push(newTeamData("GCG Ladies", "graGuerrillas", "#001946", "black", "sco"));
+
+teamList.push(newTeamData("Granite City Guerrillas", "graGuerrillas", "#001946", "black", "sco"));
+
+teamList.push(newTeamData("Hartlepool Mavericks", "hartMavericks", "#1690C1", "white", "eng"));
+
+teamList.push(newTeamData("Kapow", "kapow", "red", "black", "ni"));
+
 teamList.push(newTeamData("Kelvin Rapids", "kelRapids", "#082255", "#9CD0FF", "sco"));
 teamList.push(newTeamData("Kelvin Swifts", "kelRapids", "#082255", "#9CD0FF", "sco"));
+
+teamList.push(newTeamData("Kings of Queen's", "queAces", "#0248AA", "black", "ni"));
+
+teamList.push(newTeamData("Leamington Spartans", "leamSpartans", "#A11E23", "#E0362A", "eng"));
+teamList.push(newTeamData("Leamington Spartans 2", "leamSpartans", "#A11E23", "#E0362A", "eng"));
+teamList.push(newTeamData("Leamington Spartans 3", "leamSpartans", "#A11E23", "#E0362A", "eng"));
+
+teamList.push(newTeamData("Leeds Barn Owls", "leedsOwls", "#333EE8", "#44BA7E", "eng"));
+teamList.push(newTeamData("Leeds Owls", "leedsOwls", "#333EE8", "#44BA7E", "eng"));
+
+teamList.push(newTeamData("Leicester Mustangs", "leiMustangs", "#24398A", "white", "eng"));
+teamList.push(newTeamData("Leicester Mustangs 2", "leiMustangs", "#24398A", "white", "eng"));
+teamList.push(newTeamData("Leicester Mustangs 3", "leiMustangs", "#24398A", "white", "eng"));
+
+teamList.push(newTeamData("Leicester White Tigers", "leiTigers", "white", "black", "eng"));
+
+teamList.push(newTeamData("Lincoln Royals", "linRoyals", "#1E1B36", "yellow", "eng"));
+
+teamList.push(newTeamData("London Saints", "lonSaints", "white", "#880D17", "eng"));
+
+teamList.push(newTeamData("London Storm", "londStorm", "black", "white", "eng"));
+teamList.push(newTeamData("London Storm 2", "londStorm", "black", "white", "eng"));
+teamList.push(newTeamData("London Storm 3", "londStorm", "black", "white", "eng"));
+
+teamList.push(newTeamData("Lutterworth Meteors", "lutMeteors", "red", "black", "eng"));
+teamList.push(newTeamData("M.U.D.S.", "muds", "#7A288C", "white", "eng"));
+
+teamList.push(newTeamData("MK Cyclones", "mkCyclones", "#752F79", "#E53498", "eng"));
+teamList.push(newTeamData("MK Cyclones 2", "mkCyclones", "#752F79", "#E53498", "eng"));
+
+teamList.push(newTeamData("Manchester Honey Bees", "mancBees", "yellow", "#7F7F00", "eng"));
+teamList.push(newTeamData("Manchester Honey Workers", "mancBees", "yellow", "#7F7F00", "eng"));
+teamList.push(newTeamData("Manchester Killer Bees", "mancBees", "yellow", "#7F7F00", "eng"));
+teamList.push(newTeamData("Manchester Killer Queens", "mancBees", "yellow", "#7F7F00", "eng"));
+teamList.push(newTeamData("Manchester Queen Bees", "mancBees", "yellow", "#7F7F00", "eng"));
+teamList.push(newTeamData("Manchester Soldier Bees", "mancBees", "yellow", "#7F7F00", "eng"));
+teamList.push(newTeamData("Manchester Worker Bees", "mancBees", "yellow", "#7F7F00", "eng"));
+
+teamList.push(newTeamData("Norwich Nighthawks", "norNighthawks", "grey", "black", "eng"));
+teamList.push(newTeamData("Norwich Nighthawks 2", "norNighthawks", "grey", "black", "eng"));
+
+teamList.push(newTeamData("Nottingham Sheriffs", "notSheriffs", "green", "black", "eng"));
+teamList.push(newTeamData("Nottingham Sheriffs 2", "notSheriffs", "green", "black", "eng"));
+
+teamList.push(newTeamData("PB Dodgeball", "pbDodge", "black", "#8104F8", "eng"));
+
+teamList.push(newTeamData("Queen's Aces", "queAces", "#0248AA", "black", "ni"));
+teamList.push(newTeamData("Queen's Comets", "queComets", "black", "#1C6031", "ni"));
+teamList.push(newTeamData("Queen's Quasers", "queAces", "#0248AA", "black", "ni"));
+teamList.push(newTeamData("Queen's Shooting Stars", "queAces", "#0248AA", "black", "ni"));
+teamList.push(newTeamData("Queens of Hearts", "queAces", "#0248AA", "black", "ni"));
+teamList.push(newTeamData("Queens of Queen's", "queAces", "#0248AA", "black", "ni"));
+
+teamList.push(newTeamData("Rhondda Dragons", "rhoDragons", "#2e0000", "#cc0000", "eng"));
+
+teamList.push(newTeamData("Sheffield Bovines", "shefBovines", "black", "white", "eng"));
+
+teamList.push(newTeamData("Stafford Raptors", "stafRaptors", "black", "red", "eng"));
+teamList.push(newTeamData("Stafford Raptors 2", "stafRaptors", "black", "red", "eng"));
+
+teamList.push(newTeamData("Thunderdodge", "thunDodge", "black", "#E1860B", "eng"));
+
+teamList.push(newTeamData("Virtue Empire", "virEmpire", "#FC650C", "#314C83", "eng"));
+teamList.push(newTeamData("Virtue Slayers", "virEmpire", "#FC650C", "#314C83", "eng"));
+
+teamList.push(newTeamData("Warwick Warriors", "warWarriors", "red", "white", "eng"));
+
+teamList.push(newTeamData("Wessex Wolves", "wesWolves", "black", "#FFCC00", "eng"));
+teamList.push(newTeamData("Wessex Wolves 2", "wesWolves", "black", "#FFCC00", "eng"));
+teamList.push(newTeamData("Wessex Wolves 3", "wesWolves", "black", "#FFCC00", "eng"));
+
 teamList.push(newTeamData("West Lothian Lightning", "wlLightning", "#715E4F", "#2D2D2D", "sco"));
 
 // Define sort function
