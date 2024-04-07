@@ -164,6 +164,8 @@ teamList.push(newTeamData("Kelvin Swifts", "kelRapids", "#082255", "#9CD0FF", "s
 
 teamList.push(newTeamData("Kings of Queen's", "queAces", "#0248AA", "black", "ni"));
 
+teamList.push(newTeamData("KWAK", "kwak", "#ffff82", "#5da4f0", "eng"));
+
 teamList.push(newTeamData("Leamington Spartans", "leamSpartans", "#A11E23", "#E0362A", "eng"));
 teamList.push(newTeamData("Leamington Spartans 2", "leamSpartans", "#A11E23", "#E0362A", "eng"));
 teamList.push(newTeamData("Leamington Spartans 3", "leamSpartans", "#A11E23", "#E0362A", "eng"));
@@ -217,6 +219,8 @@ teamList.push(newTeamData("Queens of Queen's", "queAces", "#0248AA", "black", "n
 teamList.push(newTeamData("Rhondda Dragons", "rhoDragons", "#2e0000", "#cc0000", "eng"));
 
 teamList.push(newTeamData("Sheffield Bovines", "shefBovines", "black", "white", "eng"));
+
+teamList.push(newTeamData("Something Dumb", "someDumb", "white", "#62C5EF", "eng"));
 
 teamList.push(newTeamData("Stafford Raptors", "stafRaptors", "black", "red", "eng"));
 teamList.push(newTeamData("Stafford Raptors 2", "stafRaptors", "black", "red", "eng"));
