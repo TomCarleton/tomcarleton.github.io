@@ -105,6 +105,8 @@ compList.push(newCompData("NI Mixed League", "nIMixedLeague", "ni"));
 // Create blank team list
 var teamList = [];
 
+teamList.push(newTeamData("Altrincham Dodgers", "altDodgers", "orange", "black", "eng"));
+
 teamList.push(newTeamData("Ballyhackamore Amazons", "balBarbarians", "#5B008C", "black", "ni"));
 teamList.push(newTeamData("Ballyhackamore Barbarians", "balBarbarians", "#5B008C", "black", "ni"));
 teamList.push(newTeamData("Ballyhackamore Vikings", "balBarbarians", "#5B008C", "black", "ni"));
