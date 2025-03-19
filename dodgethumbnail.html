@@ -11,6 +11,20 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@200;400;600;800&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@500;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@600;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Teko:wght@500;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Lilita+One:wght@400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Mansalva:wght@400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Kalam:wght@700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Tiny5:wght@400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@600;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Luckiest+Guy:wght@400&display=swap" rel="stylesheet">
+
+  
 </head>
 
 <body>
@@ -20,7 +34,7 @@
       <div class="select-box country">
         <div class="team-select-header">Toggle Countries</div>
         <div class="country-select-container">
-          <div id="country1" class="country-select eng" onclick = "toggleCountry('eng')">England</div>
+          <div id="country1" class="country-select eng" onclick = "toggleCountry('eng')">England & Wales</div>
           <div id="country2" class="country-select ni" onclick = "toggleCountry('ni')">N Ireland</div>
           <div id="country3" class="country-select sco" onclick = "toggleCountry('sco')">Scotland</div>
         </div>
@@ -30,6 +44,7 @@
         <div class="team-select-row">
           <img id="team1Img" class="team-select-logo">
           <div class="select-container team">
+            <input id="team1Name" class="text-input" placeholder="Team 1 display name" onchange="updateImg()">
             <select id="selectTeam1" class="select-dropdown team" size="5" onchange="updateTeamLogo(this)"></select>
           </div>
         </div>
@@ -39,6 +54,7 @@
         <div class="team-select-row">
           <img id="team2Img" class="team-select-logo">
           <div class="select-container team">
+            <input id="team2Name" class="text-input" placeholder="Team 2 display name" onchange="updateImg()">
             <select id="selectTeam2" class="select-dropdown team" size="5" onchange="updateTeamLogo(this)"></select>
           </div>
         </div>
@@ -47,16 +63,17 @@
     <div class="form-column">
       <div class="select-box comp">
         <div class="team-select-header">Select Competition</div>
-        <div class="team-select-row">
-          <div class="select-container comp">
-            <select id="selectComp" class="select-dropdown comp" onchange="updateImg()">
+        <div class="comp-select-row">
+          <div class="select-container round">
+            <select id="selectComp" class="select-dropdown comp" onchange="updateComp()">
               <option value="0" label="" selected></option>
             </select>
-          </div>
-          <div class="select-container round">
             <select id="selectRound" class="select-dropdown round" onchange="updateImg()">
               <option value="0" label="" selected></option>
             </select>
+          </div>
+          <div class="select-container comp">
+            <input id="compName" class="text-input" placeholder="Custom competition name" style="display: none" onchange="updateImg()">
           </div>
         </div>
       </div>
@@ -65,6 +82,16 @@
         <div class="temp-select">
           <div id="temp1" class="temp-option" onclick="changeTemp(this)">1</div>
           <div id="temp2" class="temp-option" onclick="changeTemp(this)">2</div>
+          <div id="temp3" class="temp-option" onclick="changeTemp(this)">3</div>
+        </div>
+      </div>
+      <div class="select-box sett">
+        <div class="team-select-header">Thumbnail Settings</div>
+        <div class="comp-select-row">
+          <div class="select-container label">
+            <label class="dropdown-label">Font</label>
+            <select id="selectFont" class="select-dropdown comp" onchange="updateImg()"></select>
+          </div>
         </div>
       </div>
 

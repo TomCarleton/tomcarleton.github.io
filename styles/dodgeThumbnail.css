@@ -45,7 +45,7 @@ h1 {
   }
 
   .select-box.comp {
-    height: 150px;
+    height: auto;
   }
 
   .select-box.temp {
@@ -66,6 +66,15 @@ h1 {
   border: solid 2px #1A1A1A;
   border-radius: 10px;
   box-shadow: 12px 12px 0 black;
+}
+
+.comp-select-row {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: auto;
+  padding: 15px 5%;
+  gap: 12px;
 }
 
 .team-select-header {
@@ -92,28 +101,64 @@ h1 {
 
 .select-container.team {
   flex: 1;
-  height: 80%;
-  padding: 10px 0;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}
+
+.select-container.comp {
+  width: 100%;
+  padding: 0;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
-.select-container.comp {
-  flex: 3;
-  height: 80%;
-  padding: 20px 0;
+.select-container.round {
+  width: 100%;
+  height: 44px;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.select-container.label {
+  width: 100%;
+  height: 44px;
+  padding: 0;
   display: flex;
   align-items: center;
 }
 
-.select-container.round {
-  flex: 1;
-  height: 80%;
-  padding: 20px 0;
-  display: flex;
-  align-items: center;
+  .select-container.label label {
+    flex: 1;
+  }
+
+  .select-container.label .select-dropdown {
+    flex: 5;
+  }
+
+.text-input {
+  height: 56px;
+  width: calc(100% - 20px);
+  padding: 0 10px;
+  border-radius: 5px;
+  font-family: Unbounded, Arial;
+  font-size: max(1vw, 16px);
+  background-color: #FCEDC4;
 }
+
+  .text-input::placeholder {
+    opacity: 0.4;
+  }
+
+  .comp .text-input {
+    height: 40px;
+    margin-bottom: 15px;
+  }
 
 .select-dropdown {
   height: 100%;
@@ -125,6 +170,14 @@ h1 {
   font-size: max(1vw, 16px);
   background-color: #FCEDC4;
 }
+
+  .select-dropdown.comp {
+    flex: 4;
+  }
+
+  .select-dropdown.round {
+    flex: 1;
+  }
 
   .select-dropdown::-webkit-scrollbar {
     width: 10px;
@@ -147,6 +200,10 @@ option:checked {
   background-image: linear-gradient(90deg, #7CEABC, #FCEDC4);
   background-color: #7CEABC;
   font-weight: 600;
+}
+
+.dropdown-label {
+  margin-right: 20px;
 }
 
 .country-select-container {
