@@ -259,12 +259,17 @@ nav {
     font-size: 15px;
     margin-left: 20px;
     color: rgb(132 142 161);
+    line-height: 25px;
 }
 
 .sub-project {
     font-size: 18px;
     color: rgb(132 142 161);
 }
+
+.summary-section {
+    line-height: 30px;
+  }
 
 .bottom-link-container {
     display: flex;
